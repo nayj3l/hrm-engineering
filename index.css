@@ -14,6 +14,9 @@ li {
 section {
   height: 100vh;
 }
+section h1 {
+  font-size: xxx-large;
+}
 section .pre {
   white-space: pre-line;
 }
@@ -70,35 +73,74 @@ header .navigation a:hover {
   background: #2e338a;
   text-align: center;
   height: 90vh;
-  overflow: hidden;
   width: 100%;
+  overflow: hidden;
 }
 .slide .slider {
+  height: 100%;
   background: red;
   display: flex;
   transition: transform 0.5s ease-out;
 }
-.slide .slider img {
-  flex-shrink: 0;
-  height: -moz-fit-content;
-  height: fit-content;
+.slide .slider > div {
+  height: 100%;
   width: 100%;
+  flex-shrink: 0;
+  position: relative;
+}
+.slide .slider > div .slider-content {
+  position: absolute;
+  bottom: 3rem;
+  left: 3rem;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  padding: 5px 10px;
+  -webkit-backdrop-filter: blur(2px);
+          backdrop-filter: blur(2px);
+  text-align: justify;
+}
+.slide .slider > div .slider-content h1 {
+  font-size: xxx-large;
+  color: white;
+}
+.slide .slider > div .slider-content p {
+  font-size: larger;
+  color: white;
+}
+.slide .slider > div img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .slide .prev-button,
 .slide .next-button {
   position: absolute;
-  top: 55%;
-  transform: translateY(-50%);
+  bottom: 8%;
   background-color: transparent;
   border: none;
-  font-size: 24px;
   cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 100%;
+  padding: 3px;
+  -webkit-backdrop-filter: blur(2px);
+          backdrop-filter: blur(2px);
+  font-size: 0px;
+}
+.slide .prev-button:active,
+.slide .next-button:active {
+  box-shadow: 0 1px #666;
+  transform: translateY(1px);
+}
+.slide .prev-button:hover,
+.slide .next-button:hover {
+  filter: brightness(130%);
 }
 .slide .prev-button {
-  left: 20px;
+  right: 220px;
 }
 .slide .next-button {
-  right: 20px;
+  right: 130px;
 }
 
 .intro {
@@ -158,13 +200,11 @@ header .navigation a:hover {
   flex-direction: column;
 }
 .portfolio .container .title {
-  font-weight: bold;
-  font-size: 2rem;
-  padding: 1rem;
+  padding: 2rem;
 }
 .portfolio .container #border {
   position: relative;
-  width: 100px;
+  width: 150px;
   height: 5px;
   background-color: #2e308c;
   margin: 0 auto;
@@ -178,10 +218,11 @@ header .navigation a:hover {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   width: 90%;
+  gap: 2.5rem;
 }
 .portfolio .container .preview > div {
   position: relative;
-  height: 200px;
+  height: 230px;
   overflow: hidden;
 }
 .portfolio .container .preview > div:hover .portfolio-desc {
@@ -201,7 +242,6 @@ header .navigation a:hover {
 .portfolio .container .preview > div .portfolio-desc {
   text-align: center;
   transition: all 0.3s ease-in-out;
-  opacity: 0;
   z-index: 10;
   color: white;
   font-weight: bold;
@@ -210,6 +250,12 @@ header .navigation a:hover {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 10px;
+  padding: 5px 10px;
+  -webkit-backdrop-filter: blur(2px);
+          backdrop-filter: blur(2px);
+  text-align: center;
 }
 
 .services {
@@ -258,7 +304,7 @@ header .navigation a:hover {
   font-weight: bold;
 }
 .services .details > div:hover {
-  filter: brightness(70%);
+  filter: brightness(120%);
 }
 .services .details > div:hover p {
   width: 0;
@@ -368,4 +414,4 @@ footer .container > div:nth-child(3) {
   padding: 2rem;
   font-size: 0.8rem;
   border-top: 0.1rem solid white;
-}/*# sourceMappingURL=header.css.map */
+}/*# sourceMappingURL=index.css.map */
