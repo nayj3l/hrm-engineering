@@ -1,0 +1,417 @@
+/* Reset default styles */
+body,
+h1,
+h2,
+h3,
+p,
+ul,
+li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+section {
+  height: 100vh;
+}
+section h1 {
+  font-size: xxx-large;
+}
+section .pre {
+  white-space: pre-line;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  height: 10vh;
+}
+header .logo {
+  display: flex;
+  align-items: center;
+  padding: 4rem;
+}
+header .logo img {
+  max-width: 100px;
+}
+header .logo .logo-text {
+  margin-top: 3px;
+  margin-left: 1rem;
+}
+header .logo .logo-text .title {
+  color: #2e338a;
+  font-weight: bold;
+}
+header .logo .logo-text .logo-desc {
+  padding: 0;
+  margin: 0;
+  color: #c2e3f4;
+}
+header .navigation {
+  padding: 5rem;
+}
+header .navigation ul {
+  display: flex;
+}
+header .navigation li {
+  margin-right: 20px;
+  padding: 10px;
+}
+header .navigation a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+header .navigation a:hover {
+  color: #007bff;
+}
+
+.slide {
+  background: #2e338a;
+  text-align: center;
+  height: 90vh;
+  width: 100%;
+  overflow: hidden;
+}
+.slide .slider {
+  height: 100%;
+  background: red;
+  display: flex;
+  transition: transform 0.5s ease-out;
+}
+.slide .slider > div {
+  height: 100%;
+  width: 100%;
+  flex-shrink: 0;
+  position: relative;
+}
+.slide .slider > div .slider-content {
+  position: absolute;
+  bottom: 3rem;
+  left: 3rem;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  padding: 5px 10px;
+  -webkit-backdrop-filter: blur(2px);
+          backdrop-filter: blur(2px);
+  text-align: justify;
+}
+.slide .slider > div .slider-content h1 {
+  font-size: xxx-large;
+  color: white;
+}
+.slide .slider > div .slider-content p {
+  font-size: larger;
+  color: white;
+}
+.slide .slider > div img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.slide .prev-button,
+.slide .next-button {
+  position: absolute;
+  bottom: 8%;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 100%;
+  padding: 3px;
+  -webkit-backdrop-filter: blur(2px);
+          backdrop-filter: blur(2px);
+  font-size: 0px;
+}
+.slide .prev-button:active,
+.slide .next-button:active {
+  box-shadow: 0 1px #666;
+  transform: translateY(1px);
+}
+.slide .prev-button:hover,
+.slide .next-button:hover {
+  filter: brightness(130%);
+}
+.slide .prev-button {
+  right: 220px;
+}
+.slide .next-button {
+  right: 130px;
+}
+
+.intro {
+  height: 100vh;
+  display: flex;
+  /* 1st child */
+}
+.intro > div {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-size: 2.5rem;
+  font-weight: bold;
+  gap: 0.5rem;
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+}
+.intro > div > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.3s ease-in-out;
+}
+.intro > div:hover {
+  filter: brightness(110%);
+}
+.intro > div:hover > div {
+  transform: scale(1.1);
+}
+.intro .highlight {
+  font-size: 4rem;
+}
+.intro .projects {
+  background-color: #437cc0;
+  color: white;
+}
+.intro .ops {
+  background-color: #eeeef0;
+}
+.intro .certs {
+  background-color: #1c2d59;
+  color: white;
+}
+
+.portfolio {
+  line-height: 1.5rem;
+  height: 100%;
+  padding: 9rem 0;
+}
+.portfolio .container {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.portfolio .container .title {
+  padding: 2rem;
+}
+.portfolio .container #border {
+  position: relative;
+  width: 150px;
+  height: 5px;
+  background-color: #2e308c;
+  margin: 0 auto;
+}
+.portfolio .container .title-desc {
+  margin: 3rem 0;
+  text-align: center;
+  white-space: pre-line;
+}
+.portfolio .container .preview {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  width: 90%;
+  gap: 2.5rem;
+}
+.portfolio .container .preview > div {
+  position: relative;
+  height: 230px;
+  overflow: hidden;
+}
+.portfolio .container .preview > div:hover .portfolio-desc {
+  opacity: 1;
+}
+.portfolio .container .preview > div:hover img {
+  filter: brightness(50%);
+  transform: scale(1.2);
+}
+.portfolio .container .preview > div img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  transition: all 0.3s ease-in-out;
+}
+.portfolio .container .preview > div .portfolio-desc {
+  text-align: center;
+  transition: all 0.3s ease-in-out;
+  z-index: 10;
+  color: white;
+  font-weight: bold;
+  font-size: 150%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 10px;
+  padding: 5px 10px;
+  -webkit-backdrop-filter: blur(2px);
+          backdrop-filter: blur(2px);
+  text-align: center;
+}
+
+.services {
+  height: 100%;
+  padding: 9rem 0;
+  background: #f7f8f9;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  color: #2b2e35;
+}
+.services .title {
+  font-weight: bold;
+  font-size: 2rem;
+  text-align: center;
+}
+.services #border {
+  position: relative;
+  width: 100px;
+  height: 5px;
+  background-color: #2e338a;
+  margin: 1.5rem auto;
+}
+.services .title-desc {
+  margin: 3rem 0;
+}
+.services .details {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  width: 90%;
+}
+.services .details > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+.services .details > div * {
+  flex: 1;
+  transition: all 0.3s ease;
+}
+.services .details > div p {
+  text-align: center;
+  font-size: x-large;
+  font-weight: bold;
+}
+.services .details > div:hover {
+  filter: brightness(120%);
+}
+.services .details > div:hover p {
+  width: 0;
+  flex: 0;
+  opacity: 0;
+}
+.services .details img {
+  height: 230px;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  transition: all 0.3s ease-in-out;
+}
+
+.note {
+  display: flex;
+  justify-content: center;
+}
+.note #border {
+  position: relative;
+  width: 250px;
+  height: 5px;
+  background-color: #2e308c;
+  margin: 0;
+}
+.note .container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 70%;
+  gap: 1.5rem;
+}
+.note .container .title {
+  font-weight: bold;
+  font-size: 2rem;
+  text-align: justify;
+  color: #2e338a;
+}
+.note .container .desc {
+  color: #2b2e35;
+  font-size: 1rem;
+  align-self: flex-end;
+  line-height: 1.5rem;
+}
+
+footer {
+  background: #2e2f8a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+footer .container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  color: white;
+}
+footer .container > div:nth-child(1) {
+  display: flex;
+  justify-content: space-between;
+  padding: 3rem 1rem;
+}
+footer .container > div:nth-child(1) .logo {
+  display: flex;
+  align-items: center;
+}
+footer .container > div:nth-child(1) .logo img {
+  max-width: 150px;
+}
+footer .container > div:nth-child(1) .logo .logo-text {
+  margin-left: 1rem;
+}
+footer .container > div:nth-child(1) .logo .logo-text .title {
+  font-weight: bold;
+}
+footer .container > div:nth-child(1) .office-hrs {
+  margin: auto 0;
+}
+footer .container > div:nth-child(1) .office-hrs .title {
+  font-weight: bold;
+}
+footer .container > div:nth-child(1) .office-hrs .val {
+  font-size: 0.8rem;
+}
+footer .container > div:nth-child(2) {
+  display: flex;
+  gap: 1rem;
+}
+footer .container > div:nth-child(2) > div {
+  display: flex;
+  justify-content: end;
+  flex: 1;
+  gap: 1rem;
+  padding: 1rem;
+}
+footer .container > div:nth-child(2) > div .details {
+  margin: auto 0;
+}
+footer .container > div:nth-child(2) > div .details .title {
+  font-weight: bold;
+}
+footer .container > div:nth-child(2) > div .details .val {
+  font-size: 0.8rem;
+}
+footer .container > div:nth-child(3) {
+  text-align: center;
+  padding: 2rem;
+  font-size: 0.8rem;
+  border-top: 0.1rem solid white;
+}/*# sourceMappingURL=index.css.map */
