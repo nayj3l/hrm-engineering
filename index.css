@@ -26,7 +26,7 @@ header {
   align-items: center;
   justify-content: space-between;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-  height: 10vh;
+  height: 12vh;
 }
 header .logo {
   display: flex;
@@ -51,28 +51,61 @@ header .logo .logo-text .logo-desc {
 }
 header .navigation {
   padding: 5rem;
+  background: white;
 }
-header .navigation ul {
+header .navigation > ul {
   display: flex;
 }
-header .navigation li {
-  margin-right: 20px;
+header .navigation > ul > li {
+  margin: 0 10px;
   padding: 10px;
+}
+header .navigation > ul > li:hover .fa {
+  color: #2e338a;
+}
+header .navigation > ul .submenu {
+  display: none;
+  position: absolute;
+  background-color: #fff;
+  border-left: 2px solid #2e338a;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+  z-index: 1;
+}
+header .navigation > ul .submenu li {
+  display: block;
+  padding: 10px 15px;
+  transition: all 0.1s ease;
+  border-bottom: 1px dashed #d3d3d3;
+}
+header .navigation > ul .submenu li:hover {
+  background: #2e338a;
+}
+header .navigation > ul .submenu li:hover a {
+  color: white;
+}
+header .navigation > ul .submenu a {
+  transition: all 0.1s ease;
+  font-size: 83%;
+  color: #333;
+  text-decoration: none;
+}
+header .navigation > ul li:hover .submenu {
+  display: block;
 }
 header .navigation a {
   text-decoration: none;
   color: #333;
   font-weight: bold;
-  transition: color 0.3s ease;
 }
 header .navigation a:hover {
-  color: #007bff;
+  color: #2e338a;
 }
 
 .slide {
   background: #2e338a;
   text-align: center;
-  height: 90vh;
+  height: 88vh;
   width: 100%;
   overflow: hidden;
 }
