@@ -30,18 +30,10 @@ Proxima Nova
 - Bold
 - Regular
 
-Accent:
-#2e338a
-
-Secondary:
-#c2e3f4
-
-Contrast BG:
-#f7f8f9
-
-Dark Font:
-#2b2e35
-
+$primary-color: #2e338a;
+$seconday-color: #c2e3f4;
+$contrast-bg: #f7f8f9;
+$dark-font: #2b2e35;
 
 ---
 [SERVICES]

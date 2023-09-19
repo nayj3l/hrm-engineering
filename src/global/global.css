@@ -2,3 +2,16 @@ body {
   color: #000;
 	font-family: 'proxima-nova', sans-serif;
 }
+
+/* Reset default styles */
+body,
+h1,
+h2,
+h3,
+p,
+ul,
+li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}

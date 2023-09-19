@@ -1,0 +1,65 @@
+footer {
+  background: #2e2f8a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+footer .container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  color: white;
+}
+footer .container > div:nth-child(1) {
+  display: flex;
+  justify-content: space-between;
+  padding: 3rem 1rem;
+}
+footer .container > div:nth-child(1) .logo {
+  display: flex;
+  align-items: center;
+}
+footer .container > div:nth-child(1) .logo img {
+  max-width: 150px;
+}
+footer .container > div:nth-child(1) .logo .logo-text {
+  margin-left: 1rem;
+}
+footer .container > div:nth-child(1) .logo .logo-text .title {
+  font-weight: bold;
+}
+footer .container > div:nth-child(1) .office-hrs {
+  margin: auto 0;
+}
+footer .container > div:nth-child(1) .office-hrs .title {
+  font-weight: bold;
+}
+footer .container > div:nth-child(1) .office-hrs .val {
+  font-size: 0.8rem;
+}
+footer .container > div:nth-child(2) {
+  display: flex;
+  gap: 1rem;
+}
+footer .container > div:nth-child(2) > div {
+  display: flex;
+  justify-content: end;
+  flex: 1;
+  gap: 1rem;
+  padding: 1rem;
+}
+footer .container > div:nth-child(2) > div .details {
+  margin: auto 0;
+}
+footer .container > div:nth-child(2) > div .details .title {
+  font-weight: bold;
+}
+footer .container > div:nth-child(2) > div .details .val {
+  font-size: 0.8rem;
+}
+footer .container > div:nth-child(3) {
+  text-align: center;
+  padding: 2rem;
+  font-size: 0.8rem;
+  border-top: 0.1rem solid white;
+}/*# sourceMappingURL=footer.css.map */

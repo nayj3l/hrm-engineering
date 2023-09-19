@@ -1,29 +1,9 @@
-/* Reset default styles */
-body,
-h1,
-h2,
-h3,
-p,
-ul,
-li {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-section {
-  height: 100vh;
-}
-section .pre {
-  white-space: pre-line;
-}
-
 header {
   display: flex;
   align-items: center;
   justify-content: space-between;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-  height: 10vh;
+  height: 12vh;
 }
 header .logo {
   display: flex;
@@ -48,324 +28,53 @@ header .logo .logo-text .logo-desc {
 }
 header .navigation {
   padding: 5rem;
+  background: transparent;
 }
-header .navigation ul {
+header .navigation > ul {
   display: flex;
 }
-header .navigation li {
-  margin-right: 20px;
+header .navigation > ul > li {
+  margin: 0 10px;
   padding: 10px;
+}
+header .navigation > ul > li:hover .fa {
+  color: #2e338a;
+}
+header .navigation > ul .submenu {
+  display: none;
+  position: absolute;
+  background-color: #fff;
+  border-left: 2px solid #2e338a;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+  z-index: 1;
+}
+header .navigation > ul .submenu li {
+  display: block;
+  padding: 10px 15px;
+  transition: all 0.1s ease;
+  border-bottom: 1px dashed #d3d3d3;
+}
+header .navigation > ul .submenu li:hover {
+  background: #2e338a;
+}
+header .navigation > ul .submenu li:hover a {
+  color: white;
+}
+header .navigation > ul .submenu a {
+  transition: all 0.1s ease;
+  font-size: 83%;
+  color: #333;
+  text-decoration: none;
+}
+header .navigation > ul li:hover .submenu {
+  display: block;
 }
 header .navigation a {
   text-decoration: none;
   color: #333;
   font-weight: bold;
-  transition: color 0.3s ease;
 }
 header .navigation a:hover {
-  color: #007bff;
-}
-
-.slide {
-  background: #2e338a;
-  text-align: center;
-  height: 90vh;
-  overflow: hidden;
-  width: 100%;
-}
-.slide .slider {
-  background: red;
-  display: flex;
-  transition: transform 0.5s ease-out;
-}
-.slide .slider img {
-  flex-shrink: 0;
-  height: -moz-fit-content;
-  height: fit-content;
-  width: 100%;
-}
-.slide .prev-button,
-.slide .next-button {
-  position: absolute;
-  top: 55%;
-  transform: translateY(-50%);
-  background-color: transparent;
-  border: none;
-  font-size: 24px;
-  cursor: pointer;
-}
-.slide .prev-button {
-  left: 20px;
-}
-.slide .next-button {
-  right: 20px;
-}
-
-.intro {
-  height: 100vh;
-  display: flex;
-  /* 1st child */
-}
-.intro > div {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  font-size: 2.5rem;
-  font-weight: bold;
-  gap: 0.5rem;
-  overflow: hidden;
-  transition: all 0.3s ease-in-out;
-}
-.intro > div > div {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  transition: all 0.3s ease-in-out;
-}
-.intro > div:hover {
-  filter: brightness(110%);
-}
-.intro > div:hover > div {
-  transform: scale(1.1);
-}
-.intro .highlight {
-  font-size: 4rem;
-}
-.intro .projects {
-  background-color: #437cc0;
-  color: white;
-}
-.intro .ops {
-  background-color: #eeeef0;
-}
-.intro .certs {
-  background-color: #1c2d59;
-  color: white;
-}
-
-.portfolio {
-  line-height: 1.5rem;
-  height: 100%;
-  padding: 9rem 0;
-}
-.portfolio .container {
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-.portfolio .container .title {
-  font-weight: bold;
-  font-size: 2rem;
-  padding: 1rem;
-}
-.portfolio .container #border {
-  position: relative;
-  width: 100px;
-  height: 5px;
-  background-color: #2e308c;
-  margin: 0 auto;
-}
-.portfolio .container .title-desc {
-  margin: 3rem 0;
-  text-align: center;
-  white-space: pre-line;
-}
-.portfolio .container .preview {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  width: 90%;
-}
-.portfolio .container .preview > div {
-  position: relative;
-  height: 200px;
-  overflow: hidden;
-}
-.portfolio .container .preview > div:hover .portfolio-desc {
-  opacity: 1;
-}
-.portfolio .container .preview > div:hover img {
-  filter: brightness(50%);
-  transform: scale(1.2);
-}
-.portfolio .container .preview > div img {
-  height: 100%;
-  width: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  transition: all 0.3s ease-in-out;
-}
-.portfolio .container .preview > div .portfolio-desc {
-  text-align: center;
-  transition: all 0.3s ease-in-out;
-  opacity: 0;
-  z-index: 10;
-  color: white;
-  font-weight: bold;
-  font-size: 150%;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.services {
-  height: 100%;
-  padding: 9rem 0;
-  background: #f7f8f9;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  color: #2b2e35;
-}
-.services .title {
-  font-weight: bold;
-  font-size: 2rem;
-  text-align: center;
-}
-.services #border {
-  position: relative;
-  width: 100px;
-  height: 5px;
-  background-color: #2e338a;
-  margin: 1.5rem auto;
-}
-.services .title-desc {
-  margin: 3rem 0;
-}
-.services .details {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  width: 90%;
-}
-.services .details > div {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  transition: all 0.3s ease;
-}
-.services .details > div * {
-  flex: 1;
-  transition: all 0.3s ease;
-}
-.services .details > div p {
-  text-align: center;
-  font-size: x-large;
-  font-weight: bold;
-}
-.services .details > div:hover {
-  filter: brightness(70%);
-}
-.services .details > div:hover p {
-  width: 0;
-  flex: 0;
-  opacity: 0;
-}
-.services .details img {
-  height: 230px;
-  width: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  transition: all 0.3s ease-in-out;
-}
-
-.note {
-  display: flex;
-  justify-content: center;
-}
-.note #border {
-  position: relative;
-  width: 250px;
-  height: 5px;
-  background-color: #2e308c;
-  margin: 0;
-}
-.note .container {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  width: 70%;
-  gap: 1.5rem;
-}
-.note .container .title {
-  font-weight: bold;
-  font-size: 2rem;
-  text-align: justify;
   color: #2e338a;
-}
-.note .container .desc {
-  color: #2b2e35;
-  font-size: 1rem;
-  align-self: flex-end;
-  line-height: 1.5rem;
-}
-
-footer {
-  background: #2e2f8a;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-footer .container {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-  color: white;
-}
-footer .container > div:nth-child(1) {
-  display: flex;
-  justify-content: space-between;
-  padding: 3rem 1rem;
-}
-footer .container > div:nth-child(1) .logo {
-  display: flex;
-  align-items: center;
-}
-footer .container > div:nth-child(1) .logo img {
-  max-width: 150px;
-}
-footer .container > div:nth-child(1) .logo .logo-text {
-  margin-left: 1rem;
-}
-footer .container > div:nth-child(1) .logo .logo-text .title {
-  font-weight: bold;
-}
-footer .container > div:nth-child(1) .office-hrs {
-  margin: auto 0;
-}
-footer .container > div:nth-child(1) .office-hrs .title {
-  font-weight: bold;
-}
-footer .container > div:nth-child(1) .office-hrs .val {
-  font-size: 0.8rem;
-}
-footer .container > div:nth-child(2) {
-  display: flex;
-  gap: 1rem;
-}
-footer .container > div:nth-child(2) > div {
-  display: flex;
-  justify-content: end;
-  flex: 1;
-  gap: 1rem;
-  padding: 1rem;
-}
-footer .container > div:nth-child(2) > div .details {
-  margin: auto 0;
-}
-footer .container > div:nth-child(2) > div .details .title {
-  font-weight: bold;
-}
-footer .container > div:nth-child(2) > div .details .val {
-  font-size: 0.8rem;
-}
-footer .container > div:nth-child(3) {
-  text-align: center;
-  padding: 2rem;
-  font-size: 0.8rem;
-  border-top: 0.1rem solid white;
 }/*# sourceMappingURL=header.css.map */

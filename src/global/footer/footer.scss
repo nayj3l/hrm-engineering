@@ -1,0 +1,84 @@
+footer {
+  background: #2e2f8a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    color: white;
+
+    &>div:nth-child(1) {
+      display: flex;
+      justify-content: space-between;
+      padding: 3rem 1rem;
+
+      .logo {
+        display: flex;
+        align-items: center;
+
+        img {
+          max-width: 150px;
+        }
+
+        .logo-text {
+          margin-left: 1rem;
+
+          .title {
+            font-weight: bold;
+          }
+
+        }
+      }
+
+      .office-hrs {
+        margin: auto 0;
+
+        .title {
+          font-weight: bold;
+        }
+
+        .val {
+          font-size: .8rem;
+        }
+      }
+    }
+
+    &>div:nth-child(2) {
+      display: flex;
+      gap: 1rem;
+
+      &>div {
+        display: flex;
+        justify-content: end;
+        flex: 1;
+        gap: 1rem;
+        padding: 1rem;
+
+        .details {
+          margin: auto 0;
+
+          .title {
+            font-weight: bold;
+          }
+
+          .val {
+            font-size: .8rem;
+          }
+        }
+      }
+
+    }
+
+    &>div:nth-child(3) {
+      text-align: center;
+      padding: 2rem;
+      font-size: .8rem;
+      border-top: .1rem solid white;
+    }
+  }
+
+
+}
