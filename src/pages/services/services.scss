@@ -185,7 +185,11 @@ body.services.mechanical {
       }
 
       .content-1 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
         p {
+          text-align: justify;
           font-size: large;
           line-height: 24px;
           margin: 12%;
