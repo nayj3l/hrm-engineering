@@ -57,7 +57,20 @@ footer {
         gap: 1rem;
         padding: 1rem;
 
+        .icon {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border: 1px solid white;
+          height: 50px;
+          min-width: 50px;
+          border-radius: 100%;
+        }
+
         .details {
+          display: flex;
+          flex-direction: column;
+          gap: 5px;
           margin: auto 0;
 
           .title {

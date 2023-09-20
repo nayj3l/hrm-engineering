@@ -1,6 +1,6 @@
 body {
   color: #000;
-	font-family: 'proxima-nova', sans-serif;
+  font-family: sans-serif;
 }
 
 /* Reset default styles */
@@ -14,4 +14,4 @@ li {
   margin: 0;
   padding: 0;
   list-style: none;
-}
+}/*# sourceMappingURL=global.css.map */

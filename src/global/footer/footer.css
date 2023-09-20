@@ -48,7 +48,19 @@ footer .container > div:nth-child(2) > div {
   gap: 1rem;
   padding: 1rem;
 }
+footer .container > div:nth-child(2) > div .icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid white;
+  height: 50px;
+  min-width: 50px;
+  border-radius: 100%;
+}
 footer .container > div:nth-child(2) > div .details {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
   margin: auto 0;
 }
 footer .container > div:nth-child(2) > div .details .title {

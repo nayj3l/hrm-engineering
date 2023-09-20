@@ -1,1 +1,22 @@
-$primary-color: #007bff;
+$primary-color: #2e338a;
+$seconday-color: #c2e3f4;
+$contrast-bg: #f7f8f9;
+$dark-font: #2b2e35;
+
+body {
+  color: #000;
+	font-family: sans-serif;
+}
+
+/* Reset default styles */
+body,
+h1,
+h2,
+h3,
+p,
+ul,
+li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
