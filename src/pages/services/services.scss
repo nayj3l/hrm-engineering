@@ -40,6 +40,11 @@ body.services {
     }
   }
 
+  span.subtitle {
+    font-weight: bold;
+    color: $primary-color;
+  }
+
 }
 
 body.services.scope {
@@ -86,11 +91,6 @@ body.services.scope {
         i {
           animation: move_down 1s ease-in-out infinite;
         }
-      }
-
-      span.sub-title {
-        font-weight: bold;
-        color: $primary-color;
       }
 
       p {
@@ -159,6 +159,59 @@ body.services.mechanical {
   .banner {
     background-image: url('assets/mechanical.jpg');
   }
+
+  .mechanical-intro-container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+    .content-container {
+      height: 70vh;
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+
+      .img-container {
+        overflow: hidden;
+        height: inherit;
+        width: 100%;
+
+        img {
+          height: 100%;
+          width: 100%;
+          object-fit: cover;
+        }
+      }
+
+      .content-1 {
+        p {
+          font-size: large;
+          line-height: 24px;
+          margin: 12%;
+        }
+      }
+
+      .content-2 {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        h1 {
+          color: $primary-color;
+        }
+        li {
+          margin: 13px;
+        }
+        i {
+          margin-right: 10px;
+        }
+      }
+    }
+
+  }
+
 }
 
 body.services.electrical {
