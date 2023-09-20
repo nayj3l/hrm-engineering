@@ -42,7 +42,7 @@ header {
         margin: 0 10px;
         padding: 10px;
 
-        &:hover{
+        &:hover {
           .fa {
             color: #2e338a;
           }
@@ -51,33 +51,34 @@ header {
 
       .submenu {
         display: none;
+        background: white;
         position: absolute;
-        background-color: #fff;
         border-left: 2px solid #2e338a;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         transition: all 0.3s ease-in-out;
         z-index: 1;
 
         li {
-          display: block;
-          padding: 10px 15px;
+          display: flex;
           transition: all 0.1s ease;
           border-bottom: 1px dashed #d3d3d3;
 
           &:hover {
-            background: #2e338a;
-
             a {
               color: white;
+              background: #2e338a;
             }
           }
         }
 
         a {
+          padding: 10px 15px;
           transition: all 0.1s ease;
           font-size: 83%;
           color: #333;
           text-decoration: none;
+          background: white;
+          width: 100%;
         }
       }
 

@@ -82,8 +82,10 @@ section .pre {
 }
 
 .intro {
-  height: 100vh;
+  padding: 5%;
+  height: 50vh;
   display: flex;
+  gap: 2%;
   /* 1st child */
 }
 .intro > div {
@@ -138,6 +140,7 @@ section .pre {
   flex-direction: column;
 }
 .portfolio .container .title {
+  color: #2e338a;
   padding: 2rem;
 }
 .portfolio .container #border {
@@ -149,6 +152,7 @@ section .pre {
 }
 .portfolio .container .title-desc {
   margin: 3rem 0;
+  font-size: 20px;
   text-align: center;
   white-space: pre-line;
 }
@@ -207,17 +211,19 @@ section .pre {
 }
 .services .title {
   font-weight: bold;
+  color: #2e338a;
   font-size: 2rem;
   text-align: center;
 }
 .services #border {
   position: relative;
-  width: 100px;
+  width: 150px;
   height: 5px;
   background-color: #2e338a;
   margin: 1.5rem auto;
 }
 .services .title-desc {
+  font-size: 20px;
   margin: 3rem 0;
 }
 .services .details {
@@ -282,8 +288,8 @@ section .pre {
   color: #2e338a;
 }
 .note .container .desc {
+  font-size: 20px;
   color: #2b2e35;
-  font-size: 1rem;
   align-self: flex-end;
   line-height: 1.5rem;
 }/*# sourceMappingURL=index.css.map */

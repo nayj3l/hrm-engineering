@@ -42,30 +42,30 @@ header .navigation > ul > li:hover .fa {
 }
 header .navigation > ul .submenu {
   display: none;
+  background: white;
   position: absolute;
-  background-color: #fff;
   border-left: 2px solid #2e338a;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease-in-out;
   z-index: 1;
 }
 header .navigation > ul .submenu li {
-  display: block;
-  padding: 10px 15px;
+  display: flex;
   transition: all 0.1s ease;
   border-bottom: 1px dashed #d3d3d3;
 }
-header .navigation > ul .submenu li:hover {
-  background: #2e338a;
-}
 header .navigation > ul .submenu li:hover a {
   color: white;
+  background: #2e338a;
 }
 header .navigation > ul .submenu a {
+  padding: 10px 15px;
   transition: all 0.1s ease;
   font-size: 83%;
   color: #333;
   text-decoration: none;
+  background: white;
+  width: 100%;
 }
 header .navigation > ul li:hover .submenu {
   display: block;
