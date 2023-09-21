@@ -3,9 +3,24 @@ $seconday-color: #c2e3f4;
 $contrast-bg: #f7f8f9;
 $dark-font: #2b2e35;
 
+@font-face {
+  font-family: proxima;
+  src: url(fonts/proxima.OTF);
+}
+
+@font-face {
+  font-family: proxima-thin;
+  src: url(fonts/proxima-thin.otf);
+}
+
+@font-face {
+  font-family: proxima-bold;
+  src: url(fonts/proxima-bold.otf);
+}
+
 body {
   color: #000;
-	font-family: sans-serif;
+	font-family:  proxima, sans-serif;
 }
 
 /* Reset default styles */
