@@ -5,6 +5,11 @@ $dark-font: #2b2e35;
 
 body.services {
 
+  .pre {
+    text-align: center;
+    white-space: pre-line;
+  }
+
   .banner {
     height: 50vh;
     background: #2b2e35;
@@ -188,6 +193,7 @@ body.services.mechanical {
         display: flex;
         justify-content: center;
         align-items: center;
+
         p {
           text-align: justify;
           font-size: large;
@@ -202,12 +208,15 @@ body.services.mechanical {
         justify-content: center;
         align-items: center;
         gap: 1rem;
+
         h1 {
           color: $primary-color;
         }
+
         li {
           margin: 13px;
         }
+
         i {
           margin-right: 10px;
         }
@@ -222,11 +231,99 @@ body.services.electrical {
   .banner {
     background-image: url('assets/electrical.jpg');
   }
+
+  .electrical-intro-container {
+    display: flex;
+    flex-direction: column;
+    height: 70vh;
+    padding: 10%;
+    align-items: center;
+    gap: 5rem;
+
+    .description {
+      color: #2e338a;
+    }
+
+    ul {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 1rem;
+
+      li {
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+        background: #2e338a;
+        padding: 20px;
+        color: white;
+        border-radius: 5px;
+        border: 2px solid #2e338a;
+        transition: all 0.3s ease-in-out;
+
+        &:hover {
+          background: white;;
+          color: #2e338a;
+          border: 2px solid #2e338a;
+          i {
+            color: #2e338a;
+          }
+        }
+
+        i {
+          margin-right: 10px;
+        }
+      }
+    }
+  }
 }
 
 body.services.plumbing {
   .banner {
     background-image: url('assets/plumbing.jpg');
+  }
+
+  .plumbing-intro-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 10%;
+    align-items: center;
+    gap: 5rem;
+
+    .description {
+      color: #2e338a;
+    }
+
+    ul {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 1rem;
+
+      li {
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+        background: #2e338a;
+        padding: 20px;
+        color: white;
+        border-radius: 5px;
+        border: 2px solid #2e338a;
+        transition: all 0.3s ease-in-out;
+
+        &:hover {
+          background: white;;
+          color: #2e338a;
+          border: 2px solid #2e338a;
+          i {
+            color: #2e338a;
+          }
+        }
+
+        i {
+          margin-right: 10px;
+        }
+      }
+    }
   }
 }
 

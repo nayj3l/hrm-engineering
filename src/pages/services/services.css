@@ -1,3 +1,7 @@
+body.services .pre {
+  text-align: center;
+  white-space: pre-line;
+}
 body.services .banner {
   height: 50vh;
   background: #2b2e35;
@@ -183,9 +187,85 @@ body.services.mechanical .mechanical-intro-container .content-container .content
 body.services.electrical .banner {
   background-image: url("assets/electrical.jpg");
 }
+body.services.electrical .electrical-intro-container {
+  display: flex;
+  flex-direction: column;
+  height: 70vh;
+  padding: 10%;
+  align-items: center;
+  gap: 5rem;
+}
+body.services.electrical .electrical-intro-container .description {
+  color: #2e338a;
+}
+body.services.electrical .electrical-intro-container ul {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1rem;
+}
+body.services.electrical .electrical-intro-container ul li {
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  background: #2e338a;
+  padding: 20px;
+  color: white;
+  border-radius: 5px;
+  border: 2px solid #2e338a;
+  transition: all 0.3s ease-in-out;
+}
+body.services.electrical .electrical-intro-container ul li:hover {
+  background: white;
+  color: #2e338a;
+  border: 2px solid #2e338a;
+}
+body.services.electrical .electrical-intro-container ul li:hover i {
+  color: #2e338a;
+}
+body.services.electrical .electrical-intro-container ul li i {
+  margin-right: 10px;
+}
 
 body.services.plumbing .banner {
   background-image: url("assets/plumbing.jpg");
+}
+body.services.plumbing .plumbing-intro-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 10%;
+  align-items: center;
+  gap: 5rem;
+}
+body.services.plumbing .plumbing-intro-container .description {
+  color: #2e338a;
+}
+body.services.plumbing .plumbing-intro-container ul {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1rem;
+}
+body.services.plumbing .plumbing-intro-container ul li {
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  background: #2e338a;
+  padding: 20px;
+  color: white;
+  border-radius: 5px;
+  border: 2px solid #2e338a;
+  transition: all 0.3s ease-in-out;
+}
+body.services.plumbing .plumbing-intro-container ul li:hover {
+  background: white;
+  color: #2e338a;
+  border: 2px solid #2e338a;
+}
+body.services.plumbing .plumbing-intro-container ul li:hover i {
+  color: #2e338a;
+}
+body.services.plumbing .plumbing-intro-container ul li i {
+  margin-right: 10px;
 }
 
 @keyframes move_down {

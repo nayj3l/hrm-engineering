@@ -198,7 +198,6 @@ section {
         position: relative;
         height: 230px;
         overflow: hidden;
-        // transition: all 0.3s ease-in-out;
 
         &:hover {
           .portfolio-desc {
@@ -273,6 +272,7 @@ section {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     width: 90%;
+    color: white;
 
     &>div {
       display: flex;
@@ -288,7 +288,7 @@ section {
 
       p {
         text-align: center;
-        font-size: x-large;
+        font-size: xx-large;
         font-weight: bold;
       }
 

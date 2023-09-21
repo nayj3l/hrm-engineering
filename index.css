@@ -230,6 +230,7 @@ section .pre {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   width: 90%;
+  color: white;
 }
 .services .details > div {
   display: flex;
@@ -244,7 +245,7 @@ section .pre {
 }
 .services .details > div p {
   text-align: center;
-  font-size: x-large;
+  font-size: xx-large;
   font-weight: bold;
 }
 .services .details > div:hover {

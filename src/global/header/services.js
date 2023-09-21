@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
   const paragraphs = document.querySelectorAll(".details > div");
-  const colors = ["#e1e1e1", "#f3a95e", "#ee7d22", "#e54e21"];
+  const colors = ["#4370CA", "#7890BF", "#152340", "#586A8C"];
 
   const shuffleArray = (array) => {
     for (let i = array.length - 1; i > 0; i--) {
@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
   let divs = document.querySelectorAll(".details > div")
 
   let options = {
-    rootMargin: "0px",
+    rootMargin: "-160px",
     threshold: .6,
   };
 
