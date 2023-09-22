@@ -34,7 +34,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1rem;
+  gap: 2rem;
   padding: 10%;
   text-align: center;
 }
@@ -55,22 +55,31 @@
 .teams-container .content {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 1rem;
+  gap: 2rem;
 }
+.teams-container .highlight {
+  width: 300px;
+}
+.teams-container .highlight .img-container .img-description {
+  padding: 0 !important;
+}
+.teams-container .highlight .img-container,
 .teams-container .content .img-container {
   color: white;
   transition: all 0.3s ease-in-out;
   background: #2e338a;
   padding: 3px;
-  width: 100%;
 }
+.teams-container .highlight .img-container:hover img,
 .teams-container .content .img-container:hover img {
   transform: scale(1.2);
 }
+.teams-container .highlight .img-container .img-content,
 .teams-container .content .img-container .img-content {
   overflow: hidden;
   height: 400px;
 }
+.teams-container .highlight .img-container .img-content img,
 .teams-container .content .img-container .img-content img {
   height: 100%;
   width: 100%;
@@ -78,22 +87,22 @@
      object-fit: cover;
   transition: all 0.3s ease-in-out;
 }
+.teams-container .highlight .img-container .img-description,
 .teams-container .content .img-container .img-description {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   padding: 10px;
-  height: 80px;
+  height: 70px;
 }
+.teams-container .highlight .img-container .img-description p,
 .teams-container .content .img-container .img-description p {
   font-size: 14px;
 }
+.teams-container .highlight .img-container .img-description .name,
 .teams-container .content .img-container .img-description .name {
   font-family: proxima-bold;
   margin-bottom: 3px;
   font-size: 16px;
-}
-.teams-container .highlight {
-  width: 300px;
 }/*# sourceMappingURL=teams.css.map */

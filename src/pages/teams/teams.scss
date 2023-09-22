@@ -2,7 +2,7 @@ $primary-color: #2e338a;
 $seconday-color: #c2e3f4;
 $contrast-bg: #f7f8f9;
 $dark-font: #2b2e35;
-$gap: 1rem;
+$gap: 2rem;
 
 .banner {
   height: 50vh;
@@ -72,14 +72,26 @@ $gap: 1rem;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: $gap;
+  }
 
+  .highlight {
+    width: 300px;
+
+    .img-container {
+      .img-description {
+        padding: 0!important;
+      }
+    }
+  }
+
+  .highlight,
+  .content {
     .img-container {
       color: white;
       transition: all .3s ease-in-out;
       background: $primary-color;
       padding: 3px;
-      width: 100%;
-      
+
       &:hover {
         img {
           transform: scale(1.2);
@@ -104,10 +116,12 @@ $gap: 1rem;
         align-items: center;
         justify-content: center;
         padding: 10px;
-        height: 80px;
+        height: 70px;
+
         p {
           font-size: 14px;
         }
+
         .name {
           font-family: proxima-bold;
           margin-bottom: 3px;
@@ -115,10 +129,6 @@ $gap: 1rem;
         }
       }
     }
-  }
-
-  .highlight {
-    width: 300px;
   }
 
 }
