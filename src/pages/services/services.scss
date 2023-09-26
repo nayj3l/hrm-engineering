@@ -5,6 +5,39 @@ $dark-font: #2b2e35;
 
 body.services {
 
+  .service-container {
+    padding: 10%;
+  }
+
+  .services-title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10%;
+    text-align: center;
+    text-transform: uppercase;
+    white-space: pre-line;
+
+    h1 {
+      color: white;
+      background: $primary-color;
+      padding: 1rem 5rem;
+      margin: 1rem;
+    }
+
+    #border {
+      position: relative;
+      width: 150px;
+      height: 3px;
+      background-color: #2e308c;
+    }
+  }
+
+  &>div:nth-child(even):not(:nth-child(2)) {
+    background: $contrast-bg;
+  }
+
   .pre {
     text-align: center;
     white-space: pre-line;
@@ -35,12 +68,20 @@ body.services {
 
     .content {
       display: flex;
+      flex-direction: column;
       justify-content: center;
+      align-items: center;
+      gap: 10px;
 
-      h1 {
+      h1,
+      h2 {
         z-index: 1;
         color: white;
         font-size: 50px;
+      }
+
+      h2 {
+        font-size: 25px;
       }
     }
   }
@@ -50,11 +91,7 @@ body.services {
     color: $primary-color;
   }
 
-}
-
-body.services.scope {
-  .scope-services-description-container {
-    padding: 10%;
+  .scope-services-description.service-container {
     height: 50vh;
     display: flex;
     justify-content: center;
@@ -104,20 +141,11 @@ body.services.scope {
     }
   }
 
-  .general-project-container {
-    padding: 10%;
+  .general-project.service-container {
     display: flex;
     align-items: center;
     flex-direction: column;
-    gap: 5rem;
     background: $contrast-bg;
-
-    .general-project-title {
-      white-space: pre-line;
-      text-align: center;
-      color: $primary-color;
-      text-transform: uppercase;
-    }
 
     .general-project-items {
       display: grid;
@@ -132,19 +160,10 @@ body.services.scope {
     }
   }
 
-  .construction-phase-services-container {
-    padding: 10%;
+  .construction-phase-services.service-container {
     display: flex;
     align-items: center;
     flex-direction: column;
-    gap: 5rem;
-
-    .title {
-      white-space: pre-line;
-      text-align: center;
-      color: $primary-color;
-      text-transform: uppercase;
-    }
 
     .items {
       display: grid;
@@ -158,169 +177,159 @@ body.services.scope {
       }
     }
   }
-}
 
-body.services.mechanical {
-  .banner {
-    background-image: url('assets/mechanical.jpg');
+  .mechanical {
+    padding: 10% 0;
+
+    .mechanical-intro-container {
+      height: 100%;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+
+      .content-container {
+        height: 70vh;
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+
+        .img-container {
+          overflow: hidden;
+          height: inherit;
+          width: 100%;
+
+          img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+          }
+        }
+
+        .content-1 {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          p {
+            text-align: justify;
+            font-size: large;
+            line-height: 24px;
+            margin: 12%;
+          }
+        }
+
+        .content-2 {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          gap: 1rem;
+
+          h1 {
+            color: $primary-color;
+          }
+
+          li {
+            margin: 13px;
+          }
+
+          i {
+            margin-right: 10px;
+          }
+        }
+      }
+
+    }
   }
 
-  .mechanical-intro-container {
-    height: 100%;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
+  .electrical {
+    .electrical-intro-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
 
-    .content-container {
-      height: 70vh;
-      width: 100%;
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-
-      .img-container {
-        overflow: hidden;
-        height: inherit;
-        width: 100%;
-
-        img {
-          height: 100%;
-          width: 100%;
-          object-fit: cover;
-        }
+      .description {
+        color: #2e338a;
+        margin-bottom: 5rem;
       }
 
-      .content-1 {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-        p {
-          text-align: justify;
-          font-size: large;
-          line-height: 24px;
-          margin: 12%;
-        }
-      }
-
-      .content-2 {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
+      ul {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
         gap: 1rem;
 
-        h1 {
-          color: $primary-color;
+        li {
+          margin-bottom: 10px;
+          display: flex;
+          align-items: center;
+          background: #2e338a;
+          padding: 20px;
+          color: white;
+          border-radius: 5px;
+          border: 2px solid #2e338a;
+          transition: all 0.3s ease-in-out;
+
+          &:hover {
+            background: white;
+            ;
+            color: #2e338a;
+            border: 2px solid #2e338a;
+
+            i {
+              color: #2e338a;
+            }
+          }
+
+          i {
+            margin-right: 10px;
+          }
         }
+      }
+    }
+  }
+
+  .plumbing {
+    .plumbing-intro-container {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      align-items: center;
+      gap: 5rem;
+
+      .description {
+        color: #2e338a;
+      }
+
+      ul {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 1rem;
 
         li {
-          margin: 13px;
-        }
-
-        i {
-          margin-right: 10px;
-        }
-      }
-    }
-
-  }
-
-}
-
-body.services.electrical {
-  .banner {
-    background-image: url('assets/electrical.jpg');
-  }
-
-  .electrical-intro-container {
-    display: flex;
-    flex-direction: column;
-    height: 70vh;
-    padding: 10%;
-    align-items: center;
-    gap: 5rem;
-
-    .description {
-      color: #2e338a;
-    }
-
-    ul {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      gap: 1rem;
-
-      li {
-        margin-bottom: 10px;
-        display: flex;
-        align-items: center;
-        background: #2e338a;
-        padding: 20px;
-        color: white;
-        border-radius: 5px;
-        border: 2px solid #2e338a;
-        transition: all 0.3s ease-in-out;
-
-        &:hover {
-          background: white;;
-          color: #2e338a;
+          margin-bottom: 10px;
+          display: flex;
+          align-items: center;
+          background: #2e338a;
+          padding: 20px;
+          color: white;
+          border-radius: 5px;
           border: 2px solid #2e338a;
-          i {
+          transition: all 0.3s ease-in-out;
+
+          &:hover {
+            background: white;
+            ;
             color: #2e338a;
+            border: 2px solid #2e338a;
+
+            i {
+              color: #2e338a;
+            }
           }
-        }
 
-        i {
-          margin-right: 10px;
-        }
-      }
-    }
-  }
-}
-
-body.services.plumbing {
-  .banner {
-    background-image: url('assets/plumbing.jpg');
-  }
-
-  .plumbing-intro-container {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    padding: 10%;
-    align-items: center;
-    gap: 5rem;
-
-    .description {
-      color: #2e338a;
-    }
-
-    ul {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      gap: 1rem;
-
-      li {
-        margin-bottom: 10px;
-        display: flex;
-        align-items: center;
-        background: #2e338a;
-        padding: 20px;
-        color: white;
-        border-radius: 5px;
-        border: 2px solid #2e338a;
-        transition: all 0.3s ease-in-out;
-
-        &:hover {
-          background: white;;
-          color: #2e338a;
-          border: 2px solid #2e338a;
           i {
-            color: #2e338a;
+            margin-right: 10px;
           }
-        }
-
-        i {
-          margin-right: 10px;
         }
       }
     }

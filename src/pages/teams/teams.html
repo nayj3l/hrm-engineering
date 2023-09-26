@@ -11,7 +11,6 @@
 	<link rel="stylesheet" href="//use.fontawesome.com/releases/v5.0.7/css/all.css">
 	<link rel="stylesheet" href="src/pages/teams/teams.css">
 	<script src="src/assets/jquery/jquery-3.7.1.min.js"></script>
-	<script src="src/global/global.js"></script>
 	<title>HRM Engineering</title>
 </head>
 
@@ -20,22 +19,61 @@
 
 	<div class="banner">
 		<div class="content">
-			<h1>OUR TEAM</h1>
+			<div class="teams-title">
+				<h1 class="pre">Meet Our Team</h1>
+				<div id="border"></div>
+			</div>
+			<p>Step into the world of <span>HRM Engineering Services, P.C.</span>
+				With more than 20 years of dedicated service, we've been the driving force behind
+				countless successful building projects. Get ready to embark on an engineering journey like no other!
+			</p>
+			<p class="highlight">Let's build together!</p>
+		</div>
+	</div>
+
+	<div class="image-container">
+		<div class="img-1">
+			<div>
+				<img src="src/assets/teams/ed.jpg" alt="">
+			</div>
+			<div>
+				<img src="src/assets/teams/andrew.jpg" alt="">
+			</div>
+			<div>
+				<img src="src/assets/teams/janina.jpg" alt="">
+			</div>
+			<div>
+				<img src="src/assets/teams/jastine.jpg" alt="">
+			</div>
+			<div>
+				<img src="src/assets/teams/josheff.jpg" alt="">
+			</div>
+			<div>
+				<img src="src/assets/teams/nicko.jpg" alt="">
+			</div>
+			<div>
+				<img src="src/assets/teams/ray.jpg" alt="">
+			</div>
+			<div>
+				<img src="src/assets/teams/ronald.jpg" alt="">
+			</div>
+			<div class="last-img">
+				<img src="src/assets/teams/vicente.jpg" alt="">
+			</div>
 		</div>
 	</div>
 
 	<div class="teams-container">
-		<div class="intro">
-			<h1 class="pre">We're Excited to Share Our Team with You</h1>
-		</div>
+		<!-- <div class="intro"> -->
+		<!-- <h1 class="pre">We're Excited to Share Our Team with You</h1> -->
+		<!-- </div> -->
 		<div class="highlight">
 			<div class="img-container">
 				<div class="img-content">
 					<img src="src/assets/teams/ed.jpg" alt="">
 				</div>
 				<div class="img-description">
-					<p class="name">Edwin Deguzman</p>
-					<p></p>
+					<p class="name">Edwin Deguzman, PE</p>
 					<p>Principal</p>
 				</div>
 			</div>
@@ -46,8 +84,7 @@
 					<img src="src/assets/teams/andrew.jpg" alt="">
 				</div>
 				<div class="img-description">
-					<p class="name">Andrew James Deguzman</p>
-					<p>EIT</p>
+					<p class="name">Andrew James Deguzman, EIT</p>
 					<p>Project Manager</p>
 				</div>
 			</div>
@@ -56,9 +93,8 @@
 					<img src="src/assets/teams/janina.jpg" alt="">
 				</div>
 				<div class="img-description">
-					<p class="name">Janina Pascual</p>
-					<p>Mechanical Engineer</p>
-					<p>Project Manager & Design Engineer</p>
+					<p class="name">Janina Pascual, EIT</p>
+					<p>Project Manager</p>
 				</div>
 			</div>
 			<div class="img-container">
@@ -66,9 +102,8 @@
 					<img src="src/assets/teams/ray.jpg" alt="">
 				</div>
 				<div class="img-description">
-					<p class="name">Ray Anthony Peniera</p>
-					<p>EIT</p>
-					<p>Project Manager & Electrical Design Engineer</p>
+					<p class="name">Ray Anthony Peniera, EIT</p>
+					<p>Project Manager</p>
 				</div>
 			</div>
 			<div class="img-container">
@@ -76,8 +111,7 @@
 					<img src="src/assets/teams/josheff.jpg" alt="">
 				</div>
 				<div class="img-description">
-					<p class="name">Josheff Sanders San Diego</p>
-					<p>PE</p>
+					<p class="name">Josheff Sanders San Diego, PE</p>
 					<p>Project Manager</p>
 				</div>
 			</div>
@@ -87,8 +121,7 @@
 				</div>
 				<div class="img-description">
 					<p class="name">Ronald Ezekiel Felipe</p>
-					<p>Electrical Engineer</p>
-					<p>Electrical Design Engineer</p>
+					<p>Project Manager</p>
 				</div>
 			</div>
 			<div class="img-container">
@@ -96,9 +129,8 @@
 					<img src="src/assets/teams/jastine.jpg" alt="">
 				</div>
 				<div class="img-description">
-					<p class="name">Jastin Liwanag</p>
-					<p>EIT</p>
-					<p>Project Manager & Design Engineer</p>
+					<p class="name">Jastin Liwanag, EIT</p>
+					<p>Project Manager</p>
 				</div>
 			</div>
 			<div class="img-container">
@@ -107,8 +139,7 @@
 				</div>
 				<div class="img-description">
 					<p class="name">Nicko Arugay</p>
-					<p>Mechanical Engineer</p>
-					<p>Project Manager & Design Engineer</p>
+					<p>Project Manager</p>
 				</div>
 			</div>
 			<div class="img-container">
@@ -117,18 +148,19 @@
 				</div>
 				<div class="img-description">
 					<p class="name">Vicente Binamira III</p>
-					<p>Mechanical Engineer</p>
-					<p>Project Manager & Design Engineer</p>
+					<p>Project Manager</p>
 				</div>
 			</div>
 		</div>
 	</div>
 
 	<div id="footer-placeholder"></div>
+	<script src="src/global/global.js"></script>
 	<script>
 		loadAndInsertHTML('src/global/header/header.html', 'header-placeholder');
 		loadAndInsertHTML('src/global/footer/footer.html', 'footer-placeholder');
 	</script>
+	<script src="src/pages/teams/teams.js"></script>
 </body>
 
 </html>

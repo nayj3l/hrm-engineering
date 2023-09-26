@@ -3,6 +3,7 @@ $seconday-color: #c2e3f4;
 $contrast-bg: #f7f8f9;
 $dark-font: #2b2e35;
 $gap: 2rem;
+$img-width: 300px;
 
 .banner {
   height: 50vh;
@@ -15,7 +16,6 @@ $gap: 2rem;
   justify-content: center;
   align-items: center;
   position: relative;
-
   &::before {
     content: '';
     position: absolute;
@@ -30,11 +30,110 @@ $gap: 2rem;
   .content {
     display: flex;
     justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    color: white;
+    line-height: 26px;
+    
+    .teams-title {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    #border {
+      position: relative;
+      width: 150px;
+      height: 3px;
+      background-color: white;
+      align-self: center;
+    }
+  
+    h1,
+    p {
+      z-index: 1;
+    }
 
     h1 {
-      z-index: 1;
-      color: white;
       font-size: 50px;
+      white-space: pre-line;
+    }
+
+    p {
+      margin: 1rem 10% 0 10%;
+      padding: 1rem;
+      font-size: 20px;
+    }
+
+    span {
+      font-weight: bold;
+    }
+
+    .highlight {
+      font-size: 25px;
+      padding: 0;
+      margin: 0;
+    }
+  }
+}
+
+.image-container {
+  display: flex;
+  flex-direction: column;
+  background: $primary-color;
+  overflow: hidden;
+  mask-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)));
+
+  .img-1,
+  .img-2 {
+    display: flex;
+    width: 100%;
+
+    &>div {
+
+      img {
+        width: $img-width;
+        height: 300px;
+        object-fit: cover;
+        filter: grayscale(40%);
+      }
+    }
+  }
+
+  .img-1 {
+    animation: scroll-left 60s linear infinite;
+  }
+
+  // .img-2 {
+  //   margin-left: calc(-5 * $img-width);
+  //   animation: scroll-right 20s linear infinite;
+  // }
+
+  @keyframes scroll-left {
+    0% {
+      transform: translateX(0);
+    }
+
+    50% {
+      transform: translateX(-70%);
+    }
+
+    100% {
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes scroll-right {
+    0% {
+      transform: translateX(0);
+    }
+
+    50% {
+      transform: translateX(70%);
+    }
+
+    100% {
+      transform: translateX(0);
     }
   }
 }
@@ -79,7 +178,7 @@ $gap: 2rem;
 
     .img-container {
       .img-description {
-        padding: 0!important;
+        padding: 0 !important;
       }
     }
   }
@@ -100,7 +199,7 @@ $gap: 2rem;
 
       .img-content {
         overflow: hidden;
-        height: 400px;
+        height: 300px;
 
         img {
           height: 100%;
@@ -115,7 +214,6 @@ $gap: 2rem;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        padding: 10px;
         height: 70px;
 
         p {

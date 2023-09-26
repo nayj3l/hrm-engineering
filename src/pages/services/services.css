@@ -1,3 +1,31 @@
+body.services .service-container {
+  padding: 10%;
+}
+body.services .services-title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10%;
+  text-align: center;
+  text-transform: uppercase;
+  white-space: pre-line;
+}
+body.services .services-title h1 {
+  color: white;
+  background: #2e338a;
+  padding: 1rem 5rem;
+  margin: 1rem;
+}
+body.services .services-title #border {
+  position: relative;
+  width: 150px;
+  height: 3px;
+  background-color: #2e308c;
+}
+body.services > div:nth-child(even):not(:nth-child(2)) {
+  background: #f7f8f9;
+}
 body.services .pre {
   text-align: center;
   white-space: pre-line;
@@ -26,45 +54,50 @@ body.services .banner::before {
 }
 body.services .banner .content {
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
+  gap: 10px;
 }
-body.services .banner .content h1 {
+body.services .banner .content h1,
+body.services .banner .content h2 {
   z-index: 1;
   color: white;
   font-size: 50px;
+}
+body.services .banner .content h2 {
+  font-size: 25px;
 }
 body.services span.subtitle {
   font-weight: bold;
   color: #2e338a;
 }
-
-body.services.scope .scope-services-description-container {
-  padding: 10%;
+body.services .scope-services-description.service-container {
   height: 50vh;
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 3rem;
 }
-body.services.scope .scope-services-description-container > div {
+body.services .scope-services-description.service-container > div {
   flex: 1;
   height: 100%;
   display: flex;
 }
-body.services.scope .scope-services-description-container > div img {
+body.services .scope-services-description.service-container > div img {
   -o-object-fit: cover;
      object-fit: cover;
   width: 100%;
   height: 100%;
 }
-body.services.scope .scope-services-description-container .scope-services-description {
+body.services .scope-services-description.service-container .scope-services-description {
   display: flex;
   flex-direction: column;
   height: 100%;
   justify-content: space-evenly;
   align-items: start;
 }
-body.services.scope .scope-services-description-container .scope-services-description .check-services {
+body.services .scope-services-description.service-container .scope-services-description .check-services {
   display: flex;
   gap: 10px;
   border-radius: 7px;
@@ -73,137 +106,114 @@ body.services.scope .scope-services-description-container .scope-services-descri
   color: white;
   padding: 12px 16px;
 }
-body.services.scope .scope-services-description-container .scope-services-description .check-services p {
+body.services .scope-services-description.service-container .scope-services-description .check-services p {
   font-size: larger;
 }
-body.services.scope .scope-services-description-container .scope-services-description .check-services i {
+body.services .scope-services-description.service-container .scope-services-description .check-services i {
   animation: move_down 1s ease-in-out infinite;
 }
-body.services.scope .scope-services-description-container .scope-services-description p {
+body.services .scope-services-description.service-container .scope-services-description p {
   font-size: 24px;
 }
-body.services.scope .general-project-container {
-  padding: 10%;
+body.services .general-project.service-container {
   display: flex;
   align-items: center;
   flex-direction: column;
-  gap: 5rem;
   background: #f7f8f9;
 }
-body.services.scope .general-project-container .general-project-title {
-  white-space: pre-line;
-  text-align: center;
-  color: #2e338a;
-  text-transform: uppercase;
-}
-body.services.scope .general-project-container .general-project-items {
+body.services .general-project.service-container .general-project-items {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 20px;
   font-size: large;
 }
-body.services.scope .general-project-container .general-project-items i {
+body.services .general-project.service-container .general-project-items i {
   margin-right: 8px;
   margin-top: 15px;
 }
-body.services.scope .construction-phase-services-container {
-  padding: 10%;
+body.services .construction-phase-services.service-container {
   display: flex;
   align-items: center;
   flex-direction: column;
-  gap: 5rem;
 }
-body.services.scope .construction-phase-services-container .title {
-  white-space: pre-line;
-  text-align: center;
-  color: #2e338a;
-  text-transform: uppercase;
-}
-body.services.scope .construction-phase-services-container .items {
+body.services .construction-phase-services.service-container .items {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 20px;
   font-size: large;
 }
-body.services.scope .construction-phase-services-container .items i {
+body.services .construction-phase-services.service-container .items i {
   margin-right: 8px;
   margin-top: 15px;
 }
-
-body.services.mechanical .banner {
-  background-image: url("assets/mechanical.jpg");
+body.services .mechanical {
+  padding: 10% 0;
 }
-body.services.mechanical .mechanical-intro-container {
+body.services .mechanical .mechanical-intro-container {
   height: 100%;
   width: 100%;
   display: flex;
   flex-direction: column;
 }
-body.services.mechanical .mechanical-intro-container .content-container {
+body.services .mechanical .mechanical-intro-container .content-container {
   height: 70vh;
   width: 100%;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
 }
-body.services.mechanical .mechanical-intro-container .content-container .img-container {
+body.services .mechanical .mechanical-intro-container .content-container .img-container {
   overflow: hidden;
   height: inherit;
   width: 100%;
 }
-body.services.mechanical .mechanical-intro-container .content-container .img-container img {
+body.services .mechanical .mechanical-intro-container .content-container .img-container img {
   height: 100%;
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
 }
-body.services.mechanical .mechanical-intro-container .content-container .content-1 {
+body.services .mechanical .mechanical-intro-container .content-container .content-1 {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-body.services.mechanical .mechanical-intro-container .content-container .content-1 p {
+body.services .mechanical .mechanical-intro-container .content-container .content-1 p {
   text-align: justify;
   font-size: large;
   line-height: 24px;
   margin: 12%;
 }
-body.services.mechanical .mechanical-intro-container .content-container .content-2 {
+body.services .mechanical .mechanical-intro-container .content-container .content-2 {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 1rem;
 }
-body.services.mechanical .mechanical-intro-container .content-container .content-2 h1 {
+body.services .mechanical .mechanical-intro-container .content-container .content-2 h1 {
   color: #2e338a;
 }
-body.services.mechanical .mechanical-intro-container .content-container .content-2 li {
+body.services .mechanical .mechanical-intro-container .content-container .content-2 li {
   margin: 13px;
 }
-body.services.mechanical .mechanical-intro-container .content-container .content-2 i {
+body.services .mechanical .mechanical-intro-container .content-container .content-2 i {
   margin-right: 10px;
 }
-
-body.services.electrical .banner {
-  background-image: url("assets/electrical.jpg");
-}
-body.services.electrical .electrical-intro-container {
+body.services .electrical .electrical-intro-container {
   display: flex;
   flex-direction: column;
-  height: 70vh;
-  padding: 10%;
   align-items: center;
-  gap: 5rem;
 }
-body.services.electrical .electrical-intro-container .description {
+body.services .electrical .electrical-intro-container .description {
   color: #2e338a;
+  margin-bottom: 5rem;
 }
-body.services.electrical .electrical-intro-container ul {
+body.services .electrical .electrical-intro-container ul {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 1rem;
 }
-body.services.electrical .electrical-intro-container ul li {
+body.services .electrical .electrical-intro-container ul li {
   margin-bottom: 10px;
   display: flex;
   align-items: center;
@@ -214,38 +224,33 @@ body.services.electrical .electrical-intro-container ul li {
   border: 2px solid #2e338a;
   transition: all 0.3s ease-in-out;
 }
-body.services.electrical .electrical-intro-container ul li:hover {
+body.services .electrical .electrical-intro-container ul li:hover {
   background: white;
   color: #2e338a;
   border: 2px solid #2e338a;
 }
-body.services.electrical .electrical-intro-container ul li:hover i {
+body.services .electrical .electrical-intro-container ul li:hover i {
   color: #2e338a;
 }
-body.services.electrical .electrical-intro-container ul li i {
+body.services .electrical .electrical-intro-container ul li i {
   margin-right: 10px;
 }
-
-body.services.plumbing .banner {
-  background-image: url("assets/plumbing.jpg");
-}
-body.services.plumbing .plumbing-intro-container {
+body.services .plumbing .plumbing-intro-container {
   display: flex;
   flex-direction: column;
   height: 100%;
-  padding: 10%;
   align-items: center;
   gap: 5rem;
 }
-body.services.plumbing .plumbing-intro-container .description {
+body.services .plumbing .plumbing-intro-container .description {
   color: #2e338a;
 }
-body.services.plumbing .plumbing-intro-container ul {
+body.services .plumbing .plumbing-intro-container ul {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 1rem;
 }
-body.services.plumbing .plumbing-intro-container ul li {
+body.services .plumbing .plumbing-intro-container ul li {
   margin-bottom: 10px;
   display: flex;
   align-items: center;
@@ -256,15 +261,15 @@ body.services.plumbing .plumbing-intro-container ul li {
   border: 2px solid #2e338a;
   transition: all 0.3s ease-in-out;
 }
-body.services.plumbing .plumbing-intro-container ul li:hover {
+body.services .plumbing .plumbing-intro-container ul li:hover {
   background: white;
   color: #2e338a;
   border: 2px solid #2e338a;
 }
-body.services.plumbing .plumbing-intro-container ul li:hover i {
+body.services .plumbing .plumbing-intro-container ul li:hover i {
   color: #2e338a;
 }
-body.services.plumbing .plumbing-intro-container ul li i {
+body.services .plumbing .plumbing-intro-container ul li i {
   margin-right: 10px;
 }
 

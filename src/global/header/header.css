@@ -1,3 +1,15 @@
+.sticky {
+  z-index: 1;
+  background: white;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+#header-placeholder {
+  transition: 0.3s;
+}
+
 header {
   display: flex;
   align-items: center;
@@ -16,6 +28,7 @@ header .logo img {
 header .logo .logo-text {
   margin-top: 3px;
   margin-left: 1rem;
+  text-transform: uppercase;
 }
 header .logo .logo-text .title {
   color: #2e338a;
@@ -24,7 +37,9 @@ header .logo .logo-text .title {
 header .logo .logo-text .logo-desc {
   padding: 0;
   margin: 0;
-  color: #c2e3f4;
+  color: #2b2e35;
+  letter-spacing: 1px;
+  font-size: 90%;
 }
 header .navigation {
   padding: 5rem;

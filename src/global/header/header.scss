@@ -1,3 +1,23 @@
+$primary-color: #2e338a;
+$seconday-color: #c2e3f4;
+$contrast-bg: #f7f8f9;
+$dark-font: #2b2e35;
+
+$medium: 20px;
+
+.sticky {
+  z-index: 1;
+  background: white;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+#header-placeholder {
+  transition: 0.3s;
+
+}
+
 header {
   display: flex;
   align-items: center;
@@ -17,6 +37,7 @@ header {
     .logo-text {
       margin-top: 3px;
       margin-left: 1rem;
+      text-transform: uppercase;
 
       .title {
         color: #2e338a;
@@ -26,7 +47,9 @@ header {
       .logo-desc {
         padding: 0;
         margin: 0;
-        color: #c2e3f4;
+        color: $dark-font;
+        letter-spacing: 1px;
+        font-size: 90%;
       }
     }
   }
