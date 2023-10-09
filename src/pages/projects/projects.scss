@@ -1,0 +1,153 @@
+$primary-color: #2e338a;
+$seconday-color: #c2e3f4;
+$contrast-bg: #f7f8f9;
+$dark-font: #2b2e35;
+
+.banner-container {
+
+  .banner {
+    height: 50vh;
+    background: #2b2e35;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: inherit;
+      filter: brightness(35%);
+    }
+
+    .content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+
+      h1,
+      h2 {
+        z-index: 1;
+        color: white;
+        font-size: 50px;
+      }
+
+      h2 {
+        font-size: 25px;
+      }
+    }
+  }
+
+  .banner.residential {
+    background-image: url('assets/residential.jpg');
+  }
+
+  .banner.restaurant {
+    background-image: url('assets/restaurant.jpg');
+  }
+
+  .banner.office {
+    background-image: url('assets/office.jpg');
+  }
+
+  .banner.school {
+    background-image: url('assets/school.jpg');
+  }
+
+  .banner.mta {
+    background-image: url('assets/mta.jpg');
+  }
+
+  .banner.healthcare {
+    background-image: url('assets/healthcare.jpg');
+  }
+
+  .banner.warehouse {
+    background-image: url('assets/warehouse.jpg');
+  }
+
+  .banner.bank {
+    background-image: url('assets/bank.jpg');
+  }
+
+  .banner.religious {
+    background-image: url('assets/religious.jpg');
+  }
+}
+
+.projects-container {
+  padding: 5% 10%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-items: center;
+
+  .project-item {
+    background: $primary-color;
+    color: white;
+    width: 80%;
+    transition: .3s ease-in-out;
+    margin: 5% 0;
+
+    &:hover {
+      transform: scale(1.01);
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    .img-container {
+      width: 100%;
+      height: 350px;
+      overflow: hidden;
+
+      img {
+        width: 100%;
+        min-height: 100%;
+        max-height: 100%;
+        object-fit: cover;
+        transition: .3s ease-in-out;
+      }
+
+      // &:hover {
+      //   img {
+      //     transform: scale(1.2);
+      //     filter: brightness(60%);
+      //   }
+      // }
+    }
+
+    .project-details {
+      margin: 1rem;
+      display: flex;
+      flex-direction: column;
+
+      .project-description {
+        margin-top: 1rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        .project-highlight-details {
+          background: #f3ecff;
+          color: $primary-color;
+          padding: .5rem;
+          .project-description-highlight {
+            display: inline-block;
+            padding: .2rem 1rem;
+            background: #00c899;
+            color: white;
+            font-weight: bold;
+            margin-bottom: .5rem;
+          }
+        }
+      }
+
+    }
+  }
+}
