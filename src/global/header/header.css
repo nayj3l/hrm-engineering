@@ -33,6 +33,7 @@ header .logo .logo-text {
 header .logo .logo-text .title {
   color: #2e338a;
   font-weight: bold;
+  font-size: x-large;
 }
 header .logo .logo-text .logo-desc {
   padding: 0;
