@@ -1,0 +1,37 @@
+$primary-color: #2e338a;
+$seconday-color: #c2e3f4;
+$contrast-bg: #f7f8f9;
+$dark-font: #2b2e35;
+
+@font-face {
+  font-family: proxima;
+  src: url(fonts/proxima.OTF);
+}
+
+@font-face {
+  font-family: proxima-thin;
+  src: url(fonts/proxima-thin.otf);
+}
+
+@font-face {
+  font-family: proxima-bold;
+  src: url(fonts/proxima-bold.otf);
+}
+
+body {
+  color: #000;
+	font-family:  proxima, sans-serif;
+}
+
+/* Reset default styles */
+body,
+h1,
+h2,
+h3,
+p,
+ul,
+li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}

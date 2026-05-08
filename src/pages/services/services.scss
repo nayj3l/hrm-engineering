@@ -1,0 +1,353 @@
+$primary-color: #2e338a;
+$seconday-color: #c2e3f4;
+$contrast-bg: #f7f8f9;
+$dark-font: #2b2e35;
+
+body.services {
+
+  .service-container {
+    padding: 10%;
+  }
+
+  .services-title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10%;
+    text-align: center;
+    text-transform: uppercase;
+    white-space: pre-line;
+
+    h1 {
+      color: white;
+      background: $primary-color;
+      padding: 1rem 5rem;
+      margin: 1rem;
+    }
+
+    #border {
+      position: relative;
+      width: 150px;
+      height: 3px;
+      background-color: #2e308c;
+    }
+  }
+
+  &>div:nth-child(even):not(:nth-child(2)) {
+    background: $contrast-bg;
+  }
+
+  .pre {
+    text-align: center;
+    white-space: pre-line;
+  }
+
+  .banner {
+    height: 50vh;
+    background: #2b2e35;
+    background-image: url('assets/banner.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: inherit;
+      filter: brightness(35%);
+    }
+
+    .content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+
+      h1,
+      h2 {
+        z-index: 1;
+        color: white;
+        font-size: 50px;
+      }
+
+      h2 {
+        font-size: 25px;
+      }
+    }
+  }
+
+  span.subtitle {
+    font-weight: bold;
+    color: $primary-color;
+  }
+
+  .scope-services-description.service-container {
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+
+    &>div {
+      flex: 1;
+      height: 100%;
+      display: flex;
+
+      img {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    .scope-services-description {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      justify-content: space-evenly;
+      align-items: start;
+
+      .check-services {
+        display: flex;
+        gap: 10px;
+        border-radius: 7px;
+        justify-content: space-evenly;
+        background: $primary-color;
+        color: white;
+        padding: 12px 16px;
+
+        p {
+          font-size: larger;
+        }
+
+        i {
+          animation: move_down 1s ease-in-out infinite;
+        }
+      }
+
+      p {
+        font-size: 24px;
+      }
+    }
+  }
+
+  .general-project.service-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background: $contrast-bg;
+
+    .general-project-items {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
+      font-size: large;
+
+      i {
+        margin-right: 8px;
+        margin-top: 15px;
+      }
+    }
+  }
+
+  .construction-phase-services.service-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    .items {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 20px;
+      font-size: large;
+
+      i {
+        margin-right: 8px;
+        margin-top: 15px;
+      }
+    }
+  }
+
+  .mechanical {
+    padding: 10% 0;
+
+    .mechanical-intro-container {
+      height: 100%;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+
+      .content-container {
+        height: 70vh;
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+
+        .img-container {
+          overflow: hidden;
+          height: inherit;
+          width: 100%;
+
+          img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+          }
+        }
+
+        .content-1 {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          p {
+            text-align: justify;
+            font-size: large;
+            line-height: 24px;
+            margin: 12%;
+          }
+        }
+
+        .content-2 {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          gap: 1rem;
+
+          h1 {
+            color: $primary-color;
+          }
+
+          li {
+            margin: 13px;
+          }
+
+          i {
+            margin-right: 10px;
+          }
+        }
+      }
+
+    }
+  }
+
+  .electrical {
+    .electrical-intro-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .description {
+        color: #2e338a;
+        margin-bottom: 5rem;
+      }
+
+      ul {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 1rem;
+
+        li {
+          margin-bottom: 10px;
+          display: flex;
+          align-items: center;
+          background: #2e338a;
+          padding: 20px;
+          color: white;
+          border-radius: 5px;
+          border: 2px solid #2e338a;
+          transition: all 0.3s ease-in-out;
+
+          &:hover {
+            background: white;
+            ;
+            color: #2e338a;
+            border: 2px solid #2e338a;
+
+            i {
+              color: #2e338a;
+            }
+          }
+
+          i {
+            margin-right: 10px;
+          }
+        }
+      }
+    }
+  }
+
+  .plumbing {
+    .plumbing-intro-container {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      align-items: center;
+      gap: 5rem;
+
+      .description {
+        color: #2e338a;
+      }
+
+      ul {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 1rem;
+
+        li {
+          margin-bottom: 10px;
+          display: flex;
+          align-items: center;
+          background: #2e338a;
+          padding: 20px;
+          color: white;
+          border-radius: 5px;
+          border: 2px solid #2e338a;
+          transition: all 0.3s ease-in-out;
+
+          &:hover {
+            background: white;
+            ;
+            color: #2e338a;
+            border: 2px solid #2e338a;
+
+            i {
+              color: #2e338a;
+            }
+          }
+
+          i {
+            margin-right: 10px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@keyframes move_down {
+  0% {
+    transform: translate(0, -10px);
+    opacity: 0.3;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: translate(0, 15px);
+    opacity: 0.3;
+  }
+}

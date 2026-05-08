@@ -1,0 +1,97 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Cormorant+Garamond:ital,wght@1,500;1,600&display=swap");
+
+@font-face {
+  font-family: proxima;
+  src: url(fonts/proxima.OTF);
+}
+@font-face {
+  font-family: proxima-thin;
+  src: url(fonts/proxima-thin.otf);
+}
+
+:root {
+  --accent: #2e338a;
+  --accent-2: #437cc0;
+  --accent-deep: #1c2d59;
+  --surface: #eef2f5;
+  --surface-strong: #f7f9fb;
+  --text: #08101b;
+  --muted: #607086;
+  --line: rgba(8, 16, 27, 0.1);
+  --font-display: "Manrope", proxima, sans-serif;
+  --font-accent: "Cormorant Garamond", serif;
+  --team-portrait-filter: saturate(0.95) contrast(0.94) brightness(1.03) blur(0.35px);
+  --team-portrait-filter-hover: saturate(0.97) contrast(0.96) brightness(1.02) blur(0.18px);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@font-face {
+  color: var(--text);
+  font-family: var(--font-display);
+  background: var(--surface);
+  line-height: 1.5;
+  padding-top: 6.75rem;
+}
+body {
+  color: #000;
+  font-family: proxima, sans-serif;
+}
+
+/* Reset default styles */
+body,
+h1,
+h2,
+h3,
+p,
+ul,
+li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+body.page-home {
+  padding-top: 0;
+}
+
+body.nav-open {
+  overflow: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+img[src*="src/assets/teams/"] {
+  transform: scale(1.015);
+  transform-origin: center center;
+  filter: var(--team-portrait-filter);
+  transition: transform 0.35s ease, filter 0.35s ease;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button {
+  border: 0;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+}
+
+::selection {
+  background: rgba(67, 124, 192, 0.2);
+}
