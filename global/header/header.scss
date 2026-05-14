@@ -1,0 +1,126 @@
+$primary-color: #2e338a;
+$seconday-color: #c2e3f4;
+$contrast-bg: #f7f8f9;
+$dark-font: #2b2e35;
+
+$medium: 20px;
+
+.sticky {
+  z-index: 100;
+  background: white;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+#header-placeholder {
+  transition: 0.3s;
+
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  height: 12vh;
+
+  .logo {
+    display: flex;
+    align-items: center;
+    padding: 4rem;
+
+    img {
+      max-width: 100px;
+    }
+
+    .logo-text {
+      margin-top: 3px;
+      margin-left: 1rem;
+      text-transform: uppercase;
+
+      .title {
+        color: #2e338a;
+        font-weight: bold;
+        font-size: x-large;
+      }
+
+      .logo-desc {
+        padding: 0;
+        margin: 0;
+        color: $dark-font;
+        letter-spacing: 1px;
+        font-size: 90%;
+      }
+    }
+  }
+
+  .navigation {
+    padding: 5rem;
+    background: transparent;
+
+    &>ul {
+      display: flex;
+
+      &>li {
+        margin: 0 10px;
+        padding: 10px;
+
+        &:hover {
+          .fa {
+            color: #2e338a;
+          }
+        }
+      }
+
+      .submenu {
+        display: none;
+        background: white;
+        position: absolute;
+        border-left: 2px solid #2e338a;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease-in-out;
+        z-index: 1;
+
+        li {
+          display: flex;
+          transition: all 0.1s ease;
+          border-bottom: 1px dashed #d3d3d3;
+
+          &:hover {
+            a {
+              color: white;
+              background: #2e338a;
+            }
+          }
+        }
+
+        a {
+          padding: 10px 15px;
+          transition: all 0.1s ease;
+          font-size: 83%;
+          color: #333;
+          text-decoration: none;
+          background: white;
+          width: 100%;
+        }
+      }
+
+      li:hover .submenu {
+        display: block;
+      }
+    }
+
+
+    a {
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+
+      &:hover {
+        color: #2e338a;
+      }
+    }
+  }
+
+}

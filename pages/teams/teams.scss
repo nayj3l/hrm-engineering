@@ -1,0 +1,232 @@
+$primary-color: #2e338a;
+$seconday-color: #c2e3f4;
+$contrast-bg: #f7f8f9;
+$dark-font: #2b2e35;
+$gap: 2rem;
+$img-width: 300px;
+
+.banner {
+  height: 50vh;
+  background: #2b2e35;
+  background-image: url('assets/unity.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: inherit;
+    filter: brightness(35%);
+  }
+
+  .content {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    color: white;
+    line-height: 26px;
+    
+    .teams-title {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    #border {
+      position: relative;
+      width: 150px;
+      height: 3px;
+      background-color: white;
+      align-self: center;
+    }
+  
+    h1,
+    p {
+      z-index: 1;
+    }
+
+    h1 {
+      font-size: 50px;
+      white-space: pre-line;
+    }
+
+    p {
+      margin: 1rem 10% 0 10%;
+      padding: 1rem;
+      font-size: 20px;
+    }
+
+    span {
+      font-weight: bold;
+    }
+
+    .highlight {
+      font-size: 25px;
+      padding: 0;
+      margin: 0;
+    }
+  }
+}
+
+.image-container {
+  display: flex;
+  flex-direction: column;
+  background: $primary-color;
+  overflow: hidden;
+  mask-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)));
+
+  .img-1,
+  .img-2 {
+    display: flex;
+    width: 100%;
+
+    &>div {
+
+      img {
+        width: $img-width;
+        height: 300px;
+        object-fit: cover;
+        filter: grayscale(40%);
+      }
+    }
+  }
+
+  .img-1 {
+    animation: scroll-left 60s linear infinite;
+  }
+
+  // .img-2 {
+  //   margin-left: calc(-5 * $img-width);
+  //   animation: scroll-right 20s linear infinite;
+  // }
+
+  @keyframes scroll-left {
+    0% {
+      transform: translateX(0);
+    }
+
+    50% {
+      transform: translateX(-70%);
+    }
+
+    100% {
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes scroll-right {
+    0% {
+      transform: translateX(0);
+    }
+
+    50% {
+      transform: translateX(70%);
+    }
+
+    100% {
+      transform: translateX(0);
+    }
+  }
+}
+
+.teams-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: $gap;
+  padding: 10%;
+  text-align: center;
+
+  .intro {
+    color: $primary-color;
+    padding: 10px 25px;
+    font-size: 15px;
+    border: 3px solid $primary-color;
+    margin-bottom: 40px;
+    background: transparent;
+    transition: 0.25s;
+    box-shadow:
+      0.3em 0.3em 0 0 $primary-color,
+      inset 0.3em 0.3em 0 0 $primary-color;
+
+    &:hover,
+    &:focus {
+      box-shadow:
+        0 0 0 0 $primary-color,
+        inset 6em 3.5em 0 0 $primary-color;
+      color: white;
+    }
+  }
+
+  .content {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: $gap;
+  }
+
+  .highlight {
+    width: 300px;
+
+    .img-container {
+      .img-description {
+        padding: 0 !important;
+      }
+    }
+  }
+
+  .highlight,
+  .content {
+    .img-container {
+      color: white;
+      transition: all .3s ease-in-out;
+      background: $primary-color;
+      padding: 3px;
+
+      &:hover {
+        img {
+          transform: scale(1.2);
+        }
+      }
+
+      .img-content {
+        overflow: hidden;
+        height: 300px;
+
+        img {
+          height: 100%;
+          width: 100%;
+          object-fit: cover;
+          transition: all .3s ease-in-out;
+        }
+      }
+
+      .img-description {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 70px;
+
+        p {
+          font-size: 14px;
+        }
+
+        .name {
+          font-family: proxima-bold;
+          margin-bottom: 3px;
+          font-size: 16px;
+        }
+      }
+    }
+  }
+
+}

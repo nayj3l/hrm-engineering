@@ -81,7 +81,7 @@
   background:
     linear-gradient(180deg, rgba(12, 29, 51, 0.22), rgba(8, 16, 27, 0.7)),
     linear-gradient(115deg, rgba(46, 51, 138, 0.88), rgba(67, 124, 192, 0.48) 55%, rgba(28, 45, 89, 0.76)),
-    url("src/assets/slider/skyline-morning.jpg") center/cover no-repeat;
+    url("/assets/slider/skyline-morning.jpg") center/cover no-repeat;
 }
 
 .hero::after {
@@ -707,7 +707,7 @@
   color: #ffffff;
   background:
     linear-gradient(180deg, rgba(9, 18, 31, 0.18), rgba(9, 18, 31, 0.78)),
-    url("src/pages/services/assets/banner.jpg") center/cover no-repeat;
+    url("/pages/services/assets/banner.jpg") center/cover no-repeat;
   animation: rise-in 0.8s ease 0.18s both;
 }
 
