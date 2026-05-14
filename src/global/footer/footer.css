@@ -1,9 +1,10 @@
 .site-footer {
-  padding: 0 1rem 1rem;
+  padding: 0 0 var(--page-shell-gutter);
 }
 
 .footer-shell {
-  width: min(1320px, calc(100% - 2rem));
+  width: min(var(--page-shell-max), calc(100% - (var(--page-shell-gutter) * 2)));
+  box-sizing: border-box;
   margin: 0 auto;
   padding: clamp(2rem, 4vw, 3rem);
   border-radius: 2rem;
@@ -116,11 +117,11 @@
 
 @media (max-width: 640px) {
   .site-footer {
-    padding: 0 0.75rem 0.75rem;
+    padding: 0 0 var(--page-shell-gutter-mobile);
   }
 
   .footer-shell {
-    width: calc(100% - 1.5rem);
+    width: min(var(--page-shell-max), calc(100% - (var(--page-shell-gutter-mobile) * 2)));
     border-radius: 1.5rem;
     padding: 1.5rem;
   }

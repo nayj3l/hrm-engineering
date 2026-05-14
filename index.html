@@ -20,9 +20,11 @@
       <div class="hero-inner">
         <div class="hero-copy">
           <p class="section-label section-label--light">A Greener Future Starts Here</p>
-          <p class="hero-watermark">HRM</p>
+          <p class="hero-watermark" aria-hidden="true">HRM</p>
           <div class="hero-title-block">
-            <h1>Engineering</h1>
+            <h1 class="hero-heading" aria-label="HRM Engineering">
+              <span class="hero-title hero-title--engineering" data-text="Engineering">Engineering</span>
+            </h1>
             <p class="hero-accent">services, pc</p>
           </div>
           <p class="hero-summary">
@@ -238,6 +240,7 @@
     loadAndInsertHTML('src/global/header/header.html', 'header-placeholder');
     loadAndInsertHTML('src/global/footer/footer.html', 'footer-placeholder');
   </script>
+  <script src="src/global/header/intro.js"></script>
 
 </body>
 

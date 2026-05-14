@@ -18,6 +18,9 @@
   --text: #08101b;
   --muted: #607086;
   --line: rgba(8, 16, 27, 0.1);
+  --page-shell-max: 1320px;
+  --page-shell-gutter: 1rem;
+  --page-shell-gutter-mobile: 0.75rem;
   --font-display: "Manrope", proxima, sans-serif;
   --font-accent: "Cormorant Garamond", serif;
   --team-portrait-filter: saturate(0.95) contrast(0.94) brightness(1.03) blur(0.35px);
@@ -26,18 +29,6 @@
 
 html {
   scroll-behavior: smooth;
-}
-
-@font-face {
-  color: var(--text);
-  font-family: var(--font-display);
-  background: var(--surface);
-  line-height: 1.5;
-  padding-top: 6.75rem;
-}
-body {
-  color: #000;
-  font-family: proxima, sans-serif;
 }
 
 /* Reset default styles */
@@ -51,6 +42,14 @@ li {
   margin: 0;
   padding: 0;
   list-style: none;
+}
+
+body {
+  color: var(--text);
+  font-family: proxima, sans-serif;
+  background: var(--surface);
+  line-height: 1.5;
+  padding-top: 6.75rem;
 }
 
 body.page-home {
