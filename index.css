@@ -4,6 +4,43 @@
     linear-gradient(180deg, #f4f6f8 0%, #eef2f5 100%);
 }
 
+/* ── Home page: header always shows the white / light style ──────────── */
+.page-home #header-placeholder .site-header {
+  background: rgba(255, 255, 255, 0.97);
+  border-color: rgba(8, 16, 27, 0.07);
+  color: var(--text);
+  backdrop-filter: blur(20px);
+  box-shadow:
+    0 4px 24px rgba(5, 12, 24, 0.1),
+    0 1px 4px rgba(5, 12, 24, 0.06);
+}
+
+.page-home #header-placeholder .nav-list a:hover,
+.page-home #header-placeholder .submenu-toggle:hover,
+.page-home #header-placeholder .has-submenu.is-open .submenu-toggle {
+  background: rgba(46, 51, 138, 0.08);
+  color: var(--accent);
+}
+
+.page-home #header-placeholder .nav-cta {
+  background: var(--accent);
+  color: #ffffff;
+}
+
+.page-home #header-placeholder .nav-toggle {
+  background: rgba(46, 51, 138, 0.08);
+  color: var(--text);
+}
+
+.page-home #header-placeholder .submenu {
+  background: rgba(255, 255, 255, 0.98);
+}
+
+.page-home #header-placeholder .submenu a {
+  color: var(--text);
+}
+/* ─────────────────────────────────────────────────────────────────────── */
+
 .home-shell {
   display: flex;
   flex-direction: column;
