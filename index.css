@@ -182,10 +182,9 @@
 }
 
 .hero-title--engineering {
-  display: inline-flex;
-  align-items: center;
-  min-width: min(11ch, 100%);
-  min-height: 0.95em;
+  display: inline-block;
+  min-width: 11ch;
+  min-height: 1em;
   font-size: clamp(4.1rem, 12vw, 9.5rem);
   font-weight: 800;
   line-height: 0.84;
@@ -200,14 +199,6 @@
   margin-left: 0.12em;
   background: currentColor;
   animation: blink-caret 0.9s steps(1, end) infinite;
-}
-
-.hero-accent {
-  margin-top: 0.4rem;
-  font-family: var(--font-accent);
-  font-size: clamp(2rem, 4vw, 3.25rem);
-  font-style: italic;
-  letter-spacing: 0.04em;
 }
 
 .hero-summary {

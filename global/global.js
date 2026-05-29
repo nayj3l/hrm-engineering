@@ -45,12 +45,20 @@ function initializeHeader(headerPlaceholder) {
 	const submenuButtons = header.querySelectorAll(".submenu-toggle");
 
 	if (!headerPlaceholder.dataset.scrollBound) {
-		const updateStickyState = () => {
-			headerPlaceholder.classList.toggle("sticky", window.scrollY > 24);
-		};
-
-		window.addEventListener("scroll", updateStickyState, { passive: true });
-		updateStickyState();
+		const isHomePage = document.body.classList.contains("page-home");
+		
+		if (isHomePage) {
+			// On home page, always keep sticky class for white header
+			headerPlaceholder.classList.add("sticky");
+		} else {
+			// On other pages, toggle sticky based on scroll
+			const updateStickyState = () => {
+				headerPlaceholder.classList.toggle("sticky", window.scrollY > 24);
+			};
+			window.addEventListener("scroll", updateStickyState, { passive: true });
+			updateStickyState();
+		}
+		
 		headerPlaceholder.dataset.scrollBound = "true";
 	}
 
