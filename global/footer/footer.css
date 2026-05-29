@@ -86,18 +86,6 @@
   color: rgba(255, 255, 255, 0.48);
 }
 
-.footer-email {
-  display: block;
-  margin-top: 2.2rem;
-  padding-top: 1.6rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.12);
-  font-size: clamp(2.35rem, 8vw, 6rem);
-  font-weight: 800;
-  line-height: 0.95;
-  letter-spacing: -0.08em;
-  word-break: break-word;
-}
-
 .footer-meta {
   display: flex;
   justify-content: space-between;
