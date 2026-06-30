@@ -115,8 +115,7 @@
   color: #ffffff;
   background:
     linear-gradient(180deg, rgba(12, 29, 51, 0.22), rgba(8, 16, 27, 0.7)),
-    linear-gradient(115deg, rgba(46, 51, 138, 0.88), rgba(67, 124, 192, 0.48) 55%, rgba(28, 45, 89, 0.76)),
-    url("/assets/slider/skyline-morning.jpg") center/cover no-repeat;
+    linear-gradient(115deg, rgba(46, 51, 138, 0.88), rgba(67, 124, 192, 0.48) 55%, rgba(28, 45, 89, 0.76));
 }
 
 .hero::after {
@@ -265,16 +264,11 @@
   box-shadow: 0 35px 70px rgba(5, 12, 24, 0.28);
 }
 
-.hero-media img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
 .hero-media::after {
   content: "";
   position: absolute;
   inset: 0;
+  z-index: 1;
   background: linear-gradient(180deg, rgba(9, 18, 31, 0.02), rgba(9, 18, 31, 0.66));
 }
 
@@ -283,7 +277,7 @@
   left: 1.5rem;
   right: 1.5rem;
   bottom: 1.5rem;
-  z-index: 1;
+  z-index: 2;
   display: flex;
   justify-content: space-between;
   gap: 1rem;
@@ -504,13 +498,6 @@
   align-items: center;
 }
 
-.impact-visuals img {
-  width: 100%;
-  height: 5.8rem;
-  object-fit: cover;
-  border-radius: 1rem;
-}
-
 .impact-ruler {
   height: 0.95rem;
   border-radius: 999px;
@@ -607,13 +594,6 @@
   background: rgba(255, 255, 255, 0.1);
 }
 
-.feature-mini-card img {
-  width: 6.75rem;
-  height: 6.75rem;
-  object-fit: cover;
-  border-radius: 1rem;
-}
-
 .feature-mini-title {
   font-size: 1.15rem;
   font-weight: 800;
@@ -631,19 +611,14 @@
   content: "";
   position: absolute;
   inset: 0;
+  z-index: 1;
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(5, 7, 11, 0.38));
-}
-
-.feature-media img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
 }
 
 .feature-media-index,
 .feature-media-tag {
   position: absolute;
-  z-index: 1;
+  z-index: 2;
   padding: 0.62rem 0.9rem;
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.14);
@@ -731,13 +706,13 @@
   border-radius: 2rem;
   min-height: 28rem;
   color: #ffffff;
-  background:
-    linear-gradient(180deg, rgba(9, 18, 31, 0.18), rgba(9, 18, 31, 0.78)),
-    url("/pages/services/assets/banner.jpg") center/cover no-repeat;
+  background: linear-gradient(180deg, rgba(9, 18, 31, 0.18), rgba(9, 18, 31, 0.78));
   animation: rise-in 0.8s ease 0.18s both;
 }
 
 .contact-panel-inner {
+  position: relative;
+  z-index: 2;
   display: flex;
   flex-direction: column;
   justify-content: end;

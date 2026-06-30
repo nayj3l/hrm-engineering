@@ -1,0 +1,58 @@
+.abstract-art {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  isolation: isolate;
+}
+
+.abstract-art canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* Fallback when motion is reduced */
+@media (prefers-reduced-motion: reduce) {
+  .abstract-art {
+    background:
+      radial-gradient(circle at 30% 20%, rgba(67, 124, 192, 0.35), transparent 42%),
+      radial-gradient(circle at 78% 72%, rgba(46, 51, 138, 0.4), transparent 48%),
+      linear-gradient(135deg, #1c2d59 0%, #2e338a 52%, #437cc0 100%);
+  }
+
+  .abstract-art canvas {
+    display: none;
+  }
+}
+
+.hero .abstract-art--hero {
+  z-index: 0;
+}
+
+.hero-media .abstract-art,
+.feature-media .abstract-art,
+.contact-panel .abstract-art {
+  z-index: 0;
+}
+
+.impact-visuals .abstract-art {
+  position: relative;
+  width: 100%;
+  height: 5.8rem;
+  border-radius: 1rem;
+  box-shadow: 0 12px 28px rgba(10, 14, 22, 0.08);
+}
+
+.feature-mini-card .abstract-art {
+  position: relative;
+  flex: 0 0 6.75rem;
+  width: 6.75rem;
+  height: 6.75rem;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.abstract-art--hero {
+  background: linear-gradient(135deg, #1c2d59 0%, #2e338a 45%, #437cc0 100%);
+}

@@ -94,3 +94,13 @@ button {
 ::selection {
   background: rgba(67, 124, 192, 0.2);
 }
+
+/* Placeholder for building / infrastructure photos under review */
+img[src*="image-under-maintenance"]:not(.services-mosaic img):not(.discipline-feature-media img) {
+  object-fit: contain;
+  padding: clamp(1rem, 3vw, 2rem);
+  background:
+    radial-gradient(circle at top, rgba(67, 124, 192, 0.1), transparent 55%),
+    linear-gradient(180deg, #eef2f7 0%, #e3eaf2 100%);
+  box-sizing: border-box;
+}

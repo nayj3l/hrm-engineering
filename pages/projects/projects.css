@@ -87,40 +87,18 @@
   color: rgba(255, 255, 255, 0.8);
 }
 
-.page-projects .banner.residential {
-  background-image: url("assets/residential.jpg");
-}
-
-.page-projects .banner.restaurant {
-  background-image: url("assets/restaurant.jpg");
-}
-
-.page-projects .banner.office {
-  background-image: url("assets/office.jpg");
-}
-
-.page-projects .banner.school {
-  background-image: url("assets/school.jpg");
-}
-
-.page-projects .banner.mta {
-  background-image: url("assets/mta.jpg");
-}
-
-.page-projects .banner.healthcare {
-  background-image: url("assets/healthcare.jpg");
-}
-
-.page-projects .banner.warehouse {
-  background-image: url("assets/warehouse.jpg");
-}
-
-.page-projects .banner.bank {
-  background-image: url("assets/bank.jpg");
-}
-
+.page-projects .banner.residential,
+.page-projects .banner.restaurant,
+.page-projects .banner.office,
+.page-projects .banner.school,
+.page-projects .banner.mta,
+.page-projects .banner.healthcare,
+.page-projects .banner.warehouse,
+.page-projects .banner.bank,
 .page-projects .banner.religious {
-  background-image: url("assets/religious.jpg");
+  background-image: url("/assets/image-under-maintenance.svg");
+  background-size: cover;
+  background-position: center;
 }
 
 .page-projects .projects-container {

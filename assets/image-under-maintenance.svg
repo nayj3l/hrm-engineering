@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-label="Image under maintenance">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#eef2f7"/>
+      <stop offset="100%" stop-color="#dce4ef"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#2e338a"/>
+      <stop offset="100%" stop-color="#437cc0"/>
+    </linearGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#c5d0de" stroke-width="1" opacity="0.45"/>
+    </pattern>
+  </defs>
+
+  <rect width="1200" height="800" fill="url(#bg)"/>
+  <rect width="1200" height="800" fill="url(#grid)"/>
+
+  <g transform="translate(600 290)" fill="none" stroke="url(#accent)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M-120 90 L-120 -20 L-40 -90 L40 -90 L120 -20 L120 90 Z" fill="rgba(46,51,138,0.08)"/>
+    <path d="M-70 90 L-70 10 L70 10 L70 90"/>
+    <path d="M-30 10 L-30 -40 L30 -40 L30 10"/>
+    <circle cx="0" cy="50" r="12" fill="rgba(67,124,192,0.25)" stroke="none"/>
+  </g>
+
+  <g fill="#607086">
+    <rect x="470" y="430" width="260" height="10" rx="5" opacity="0.35"/>
+    <text x="600" y="500" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="42" font-weight="700" fill="#2e338a" letter-spacing="0.04em">
+      IMAGE UNDER MAINTENANCE
+    </text>
+    <text x="600" y="548" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="24" fill="#607086">
+      Project photo coming soon
+    </text>
+  </g>
+
+  <circle cx="180" cy="620" r="56" fill="rgba(67,124,192,0.12)"/>
+  <circle cx="1020" cy="180" r="72" fill="rgba(46,51,138,0.1)"/>
+</svg>
