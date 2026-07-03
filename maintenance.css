@@ -1,0 +1,208 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap");
+
+:root {
+  --accent: #2e338a;
+  --accent-2: #437cc0;
+  --accent-light: #c2e3f4;
+  --frame: #12161d;
+  --card: #ffffff;
+  --muted: #8a96a8;
+  --text: #08101b;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+  min-height: 100dvh;
+}
+
+body.maintenance-page {
+  font-family: "Manrope", system-ui, sans-serif;
+  background: var(--card);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+  overflow: hidden;
+}
+
+.maintenance-frame {
+  width: 100%;
+  min-height: 100dvh;
+}
+
+.maintenance-card {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  width: 100%;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(2.5rem, 6vw, 5rem) clamp(1.5rem, 4vw, 3rem);
+  background: var(--card);
+}
+
+.maintenance-brand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  text-align: center;
+  z-index: 2;
+}
+
+.maintenance-brand img {
+  width: clamp(4.5rem, 10vw, 6.5rem);
+  height: auto;
+}
+
+.maintenance-title {
+  font-size: clamp(2.75rem, 9vw, 5.5rem);
+  font-weight: 200;
+  line-height: 0.95;
+  letter-spacing: 0.28em;
+  text-indent: 0.28em;
+  text-transform: uppercase;
+  color: var(--text);
+}
+
+.maintenance-tagline {
+  margin-top: clamp(1.25rem, 2.5vw, 2rem);
+  font-size: clamp(0.62rem, 1.2vw, 0.72rem);
+  font-weight: 600;
+  letter-spacing: 0.42em;
+  text-indent: 0.42em;
+  text-transform: uppercase;
+  color: var(--muted);
+  z-index: 2;
+}
+
+.maintenance-note {
+  margin-top: 1rem;
+  max-width: 28rem;
+  font-size: 0.95rem;
+  line-height: 1.65;
+  text-align: center;
+  color: var(--muted);
+  z-index: 2;
+}
+
+.maintenance-glyphs {
+  position: absolute;
+  right: clamp(0rem, 4vw, 4rem);
+  bottom: clamp(0rem, 6vh, 5rem);
+  width: clamp(16rem, 38vw, 28rem);
+  height: clamp(16rem, 38vw, 28rem);
+  pointer-events: none;
+  z-index: 1;
+  transition: transform 0.35s ease-out;
+  will-change: transform;
+}
+
+.maintenance-glyphs svg {
+  width: 100%;
+  height: 100%;
+}
+
+.maintenance-footer {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: clamp(1.75rem, 4vw, 2.75rem);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem 2.5rem;
+  z-index: 2;
+}
+
+.maintenance-footer a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.maintenance-footer a:hover {
+  color: var(--accent);
+}
+
+.maintenance-footer svg {
+  width: 1rem;
+  height: 1rem;
+  opacity: 0.7;
+}
+
+.maintenance-cert {
+  position: absolute;
+  top: clamp(1.25rem, 3vw, 2rem);
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: rgba(96, 112, 134, 0.7);
+  z-index: 2;
+}
+
+@media (max-width: 640px) {
+  .maintenance-title {
+    letter-spacing: 0.18em;
+    text-indent: 0.18em;
+  }
+
+  .maintenance-tagline {
+    letter-spacing: 0.28em;
+    text-indent: 0.28em;
+  }
+
+  .maintenance-glyphs {
+    opacity: 0.55;
+    right: -2rem;
+    bottom: 4rem;
+  }
+
+  .maintenance-footer {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: clamp(1.75rem, 4vw, 2.75rem);
+  }
+
+  .maintenance-card {
+    min-height: 100dvh;
+    justify-content: center;
+    padding-top: clamp(2.5rem, 6vw, 5rem);
+  }
+
+  .maintenance-brand {
+    margin-top: 0;
+  }
+
+  .maintenance-note {
+    margin-bottom: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .maintenance-glyphs {
+    transition: none;
+  }
+}
