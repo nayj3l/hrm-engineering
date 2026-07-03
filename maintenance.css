@@ -61,18 +61,8 @@ body.maintenance-page {
 }
 
 .maintenance-brand img {
-  width: clamp(4.5rem, 10vw, 6.5rem);
+  width: clamp(5rem, 12vw, 8rem);
   height: auto;
-}
-
-.maintenance-title {
-  font-size: clamp(2.75rem, 9vw, 5.5rem);
-  font-weight: 200;
-  line-height: 0.95;
-  letter-spacing: 0.28em;
-  text-indent: 0.28em;
-  text-transform: uppercase;
-  color: var(--text);
 }
 
 .maintenance-tagline {
@@ -163,11 +153,6 @@ body.maintenance-page {
 }
 
 @media (max-width: 640px) {
-  .maintenance-title {
-    letter-spacing: 0.18em;
-    text-indent: 0.18em;
-  }
-
   .maintenance-tagline {
     letter-spacing: 0.28em;
     text-indent: 0.28em;
