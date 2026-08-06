@@ -1,66 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="robots" content="noindex, nofollow">
-  <title>HRM Engineering — Site Maintenance</title>
-  <link rel="icon" href="/favicon.ico">
-  <link rel="stylesheet" href="/maintenance.css">
+  <title>HRM Engineering</title>
+  <link rel="icon" href="favicon.ico">
+  <link rel="stylesheet" href="site.css">
 </head>
+<body>
+  <header class="site-header">
+    <div class="shell header-inner">
+      <a class="brand" href="./">
+        <img src="assets/HRM.png" alt="HRM Engineering">
+        <span class="brand-text">
+          <span class="brand-kicker">MBE / DBE Certified</span>
+          <span class="brand-name">HRM Engineering</span>
+        </span>
+      </a>
+      <button class="nav-toggle" type="button" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="nav" aria-label="Primary">
+        <a class="is-active" href="./">Home</a>
+        <a href="about.html">About</a>
+        <a href="team.html">Team</a>
+        <a href="work.html">Work</a>
+        <a class="nav-cta" href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
 
-<body class="maintenance-page">
-  <div class="maintenance-frame">
-    <main class="maintenance-card">
-      <p class="maintenance-cert">MBE / DBE Certified</p>
-
-      <div class="maintenance-brand">
-        <img src="/assets/HRM.png" alt="HRM Engineering logo">
+  <main>
+    <section class="home-hero">
+      <div class="home-hero-inner">
+        <p class="eyebrow" style="color: rgba(255,255,255,0.75);">Est. 2000 · New York</p>
+        <h1>A Greener Future Starts Here</h1>
+        <p class="lead">
+          Coordinated MEP and fire protection design for buildings that perform —
+          clear, buildable, and grounded in constructability.
+        </p>
+        <div class="home-hero-actions">
+          <a class="btn btn-primary" href="work.html">View Our Work</a>
+          <a class="btn btn-ghost" href="contact.html">Start a Conversation</a>
+        </div>
       </div>
+    </section>
 
-      <p class="maintenance-tagline">We are upgrading our website</p>
-      <p class="maintenance-note">
-        HRM Engineering Services, P.C. is refreshing our online presence.
-        We will be back online shortly.
-      </p>
+    <div class="home-strip">
+      <article>
+        <strong>20+</strong>
+        <span>Years of engineering practice</span>
+      </article>
+      <article>
+        <strong>MEP / FP</strong>
+        <span>Integrated building systems design</span>
+      </article>
+      <article>
+        <strong>MBE / DBE</strong>
+        <span>Certified minority-owned participation</span>
+      </article>
+    </div>
 
-      <div class="maintenance-glyphs" aria-hidden="true">
-        <svg viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <g opacity="0.22">
-            <path d="M200 40 L340 280 L60 280 Z" stroke="#08101b" stroke-width="1" fill="rgba(8,16,27,0.03)" />
-            <path d="M200 80 L300 260 L100 260 Z" stroke="#08101b" stroke-width="1" fill="rgba(8,16,27,0.05)" />
-            <path d="M200 120 L260 240 L140 240 Z" stroke="#08101b" stroke-width="1" fill="rgba(8,16,27,0.04)" />
-          </g>
-          <g opacity="0.14">
-            <path d="M320 200 L80 320 L80 80 Z" stroke="#437cc0" stroke-width="1" />
-            <path d="M280 200 L120 300 L120 100 Z" stroke="#437cc0" stroke-width="1" />
-            <path d="M240 200 L160 280 L160 120 Z" stroke="#2e338a" stroke-width="1" />
-          </g>
-          <circle cx="200" cy="200" r="6" fill="#437cc0" />
-          <circle cx="200" cy="200" r="14" fill="#437cc0" opacity="0.15" />
-        </svg>
+    <section class="section">
+      <div class="shell home-intro">
+        <div>
+          <p class="eyebrow">Who we are</p>
+          <h2>Engineering that stays close to the work.</h2>
+        </div>
+        <div>
+          <p>
+            HRM Engineering Services, P.C. is a full-service consulting firm specializing in
+            mechanical, electrical, plumbing, and fire protection systems across New York.
+          </p>
+          <p>
+            We partner with owners, architects, and construction teams from early surveys through
+            documentation and construction support — with decisions that stay clear, code-aware,
+            and practical.
+          </p>
+          <div class="home-links">
+            <a class="home-link" href="about.html">
+              <strong>About HRM</strong>
+              <span>Mission, history, and capabilities</span>
+            </a>
+            <a class="home-link" href="team.html">
+              <strong>Our Team</strong>
+              <span>Leadership and project managers</span>
+            </a>
+            <a class="home-link" href="work.html">
+              <strong>Selected Work</strong>
+              <span>Project portfolio by building type</span>
+            </a>
+            <a class="home-link" href="contact.html">
+              <strong>Contact</strong>
+              <span>Send an inquiry to our team</span>
+            </a>
+          </div>
+        </div>
       </div>
+    </section>
+  </main>
 
-      <footer class="maintenance-footer">
-        <a href="mailto:ed@hrmengineering.com">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-            <rect x="3" y="5" width="18" height="14" rx="2" />
-            <path d="M3 7l9 6 9-6" />
-          </svg>
-          ed@hrmengineering.com
-        </a>
-        <a href="tel:5162480750">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-            <path d="M6.5 4h3l1.5 5-2 1.2a11 11 0 005.8 5.8L16 14l5 1.5v3A2 2 0 0119 20C10.2 20 4 13.8 4 5a2 2 0 012-1z" />
-          </svg>
-          516-248-0750
-        </a>
-      </footer>
-    </main>
-  </div>
+  <footer class="site-footer">
+    <div class="shell footer-inner">
+      <div class="footer-brand">
+        <img src="assets/HRM.png" alt="">
+        <p>HRM Engineering Services, P.C.</p>
+      </div>
+      <p class="footer-meta">Floral Park, NY · 516-248-0750</p>
+    </div>
+  </footer>
 
-  <script src="/maintenance.js"></script>
+  <script src="site.js"></script>
 </body>
-
 </html>

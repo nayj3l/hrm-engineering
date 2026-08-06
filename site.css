@@ -278,7 +278,7 @@ main {
   background:
     linear-gradient(180deg, rgba(12, 24, 42, 0.25) 0%, rgba(12, 24, 42, 0.72) 100%),
     linear-gradient(115deg, rgba(28, 45, 89, 0.55), rgba(67, 124, 192, 0.35)),
-    url("../assets/slider/skyline-morning.jpg") center/cover no-repeat;
+    url("assets/slider/skyline-morning.jpg") center/cover no-repeat;
 }
 
 .home-hero-inner {
