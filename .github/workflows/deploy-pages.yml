@@ -24,16 +24,17 @@ jobs:
       - name: Assemble lightweight site
         run: |
           set -euo pipefail
-          mkdir -p _site/assets/slider _site/assets/teams/web
+          mkdir -p _site/assets/slider _site/assets/teams/web _site/assets/portfolio
 
           # Pages
           cp index.html about.html team.html work.html contact.html site.css site.js _site/
           cp favicon.ico _site/ 2>/dev/null || true
 
-          # Brand + hero assets only
+          # Brand + hero + team + portfolio assets
           cp assets/HRM.png _site/assets/
           cp assets/slider/skyline-morning.jpg _site/assets/slider/
           cp assets/teams/web/*.jpg _site/assets/teams/web/
+          cp assets/portfolio/rego-park-plaza.webp assets/portfolio/rego-tower.webp assets/portfolio/parsons-blvd.webp assets/portfolio/nusun-tower.webp assets/portfolio/el-ajicito.png assets/portfolio/manhattan-childrens-center.png assets/portfolio/woori-america-bank.png assets/portfolio/mosque.jpg assets/portfolio/one-penn-plaza.png assets/portfolio/mta-railcar.webp _site/assets/portfolio/
 
           # Keep total payload small
           du -sh _site

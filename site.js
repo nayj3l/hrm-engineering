@@ -1,4 +1,7 @@
 (function () {
+  const FORMSPREE_FORM_ID = "YOUR_FORM_ID";
+  const FORMSPREE_ENDPOINT = `https://formspree.io/f/${FORMSPREE_FORM_ID}`;
+
   const header = document.querySelector(".site-header");
   const toggle = document.querySelector(".nav-toggle");
   const nav = document.querySelector(".nav");
@@ -23,29 +26,37 @@
     });
   }
 
-  // Portfolio filters
   const filterButtons = document.querySelectorAll("[data-filter]");
-  const cards = document.querySelectorAll("[data-category]");
+  const groups = document.querySelectorAll(".work-group");
 
   filterButtons.forEach(button => {
     button.addEventListener("click", () => {
       const filter = button.dataset.filter;
       filterButtons.forEach(btn => btn.classList.toggle("is-active", btn === button));
 
-      cards.forEach(card => {
-        const match = filter === "all" || card.dataset.category === filter;
-        card.hidden = !match;
+      groups.forEach(group => {
+        const match = filter === "all" || group.dataset.category === filter;
+        group.hidden = !match;
       });
     });
   });
 
-  // Contact form (local demo — opens mailto with form values)
   const form = document.querySelector("#contact-form");
   const success = document.querySelector("#form-success");
+  const error = document.querySelector("#form-error");
 
   if (form) {
-    form.addEventListener("submit", event => {
+    form.addEventListener("submit", async event => {
       event.preventDefault();
+
+      if (success) {
+        success.classList.remove("is-visible");
+        success.textContent = "";
+      }
+      if (error) {
+        error.classList.remove("is-visible");
+        error.textContent = "";
+      }
 
       const data = new FormData(form);
       const name = String(data.get("name") || "").trim();
@@ -53,28 +64,62 @@
       const subject = String(data.get("subject") || "").trim();
       const message = String(data.get("message") || "").trim();
 
-      const body = [
-        `Name: ${name}`,
-        `Email: ${email}`,
-        `Inquiry type: ${subject}`,
-        "",
-        message
-      ].join("\n");
-
-      const mailto = `mailto:ed@hrmengineering.com?subject=${encodeURIComponent(
-        `Website inquiry: ${subject}`
-      )}&body=${encodeURIComponent(body)}`;
-
-      // Demo behavior for local review — no backend yet
-      window.location.href = mailto;
-
-      if (success) {
-        success.classList.add("is-visible");
-        success.textContent =
-          "Thanks — your email client should open with this inquiry ready to send.";
+      if (!name || !email || !subject || !message) {
+        if (error) {
+          error.classList.add("is-visible");
+          error.textContent = "Please complete all fields before sending.";
+        }
+        return;
       }
 
-      form.reset();
+      const payload = new FormData();
+      payload.set("name", name);
+      payload.set("email", email);
+      payload.set("_replyto", email);
+      payload.set("subject", subject);
+      payload.set("_subject", `Website inquiry: ${subject}`);
+      payload.set("message", message);
+
+      const showError = () => {
+        if (error) {
+          error.classList.add("is-visible");
+          error.textContent =
+            "Unable to send right now. Please email info@hrmengineering.com.";
+        }
+      };
+
+      if (!FORMSPREE_FORM_ID || FORMSPREE_FORM_ID === "YOUR_FORM_ID") {
+        showError();
+        return;
+      }
+
+      const submitButton = form.querySelector("button[type='submit']");
+      if (submitButton) submitButton.disabled = true;
+
+      try {
+        const response = await fetch(FORMSPREE_ENDPOINT, {
+          method: "POST",
+          headers: { Accept: "application/json" },
+          body: payload
+        });
+
+        if (!response.ok) {
+          showError();
+          return;
+        }
+
+        form.reset();
+        form.hidden = true;
+        if (success) {
+          success.classList.add("is-visible");
+          success.textContent =
+            "Your inquiry was received. Someone from HRM will follow up.";
+        }
+      } catch (err) {
+        showError();
+      } finally {
+        if (submitButton) submitButton.disabled = false;
+      }
     });
   }
 })();
