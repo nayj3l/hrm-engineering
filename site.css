@@ -283,18 +283,107 @@ main {
   align-items: flex-end;
   overflow: hidden;
   color: #fff;
+  background: #0c182a;
+}
+
+.home-hero-media {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+  transform: translate3d(0, var(--hero-shift, 0px), 0);
+  will-change: transform;
+  animation: heroImageIn 1.8s ease-out both;
+}
+
+.home-hero-media-image {
+  position: absolute;
+  inset: -14%;
+  background: url("assets/slider/skyline-morning.jpg") center/cover no-repeat;
+  transform-origin: 42% 40%;
+  animation: heroKenBurns 42s ease-in-out infinite alternate;
+  will-change: transform;
+}
+
+.home-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
   background:
-    linear-gradient(180deg, rgba(12, 24, 42, 0.25) 0%, rgba(12, 24, 42, 0.72) 100%),
-    linear-gradient(115deg, rgba(28, 45, 89, 0.55), rgba(67, 124, 192, 0.35)),
-    url("assets/slider/skyline-morning.jpg") center/cover no-repeat;
+    linear-gradient(180deg, rgba(12, 24, 42, 0.18) 0%, rgba(12, 24, 42, 0.76) 100%),
+    linear-gradient(115deg, rgba(28, 45, 89, 0.48), rgba(67, 124, 192, 0.22));
+  animation: heroVeilIn 1.6s ease-out both;
 }
 
 .home-hero-inner {
   position: relative;
-  z-index: 1;
+  z-index: 2;
   width: min(var(--max), calc(100% - (var(--gutter) * 2)));
   margin: 0 auto;
   padding: 0 0 clamp(3.5rem, 8vw, 5.5rem);
+}
+
+.home-hero-inner > * {
+  animation: heroCopyIn 1.2s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.home-hero-inner > :nth-child(1) { animation-delay: 0.28s; }
+.home-hero-inner > :nth-child(2) { animation-delay: 0.46s; }
+.home-hero-inner > :nth-child(3) { animation-delay: 0.64s; }
+
+@keyframes heroImageIn {
+  from {
+    opacity: 0;
+    filter: blur(12px) saturate(0.8);
+  }
+  to {
+    opacity: 1;
+    filter: blur(0) saturate(1);
+  }
+}
+
+@keyframes heroKenBurns {
+  from {
+    transform: scale(1.08) translate3d(0, 0, 0);
+  }
+  to {
+    transform: scale(1.2) translate3d(-3.2%, -1.6%, 0);
+  }
+}
+
+@keyframes heroVeilIn {
+  from { opacity: 0.35; }
+  to { opacity: 1; }
+}
+
+@keyframes heroCopyIn {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 1.35rem, 0);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-hero-media,
+  .home-hero-media-image,
+  .home-hero::after,
+  .home-hero-inner > * {
+    animation: none !important;
+    transform: none;
+    opacity: 1;
+    filter: none;
+  }
+
+  .home-hero-media-image {
+    inset: 0;
+  }
 }
 
 .home-hero h1 {

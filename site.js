@@ -12,6 +12,18 @@
     onScroll();
   }
 
+  const heroMedia = document.querySelector(".home-hero-media");
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  if (heroMedia && !reduceMotion) {
+    const shiftHero = () => {
+      const y = Math.min(window.scrollY, 720);
+      heroMedia.style.setProperty("--hero-shift", `${y * 0.22}px`);
+    };
+    window.addEventListener("scroll", shiftHero, { passive: true });
+    shiftHero();
+  }
+
   if (toggle && nav) {
     toggle.addEventListener("click", () => {
       const open = nav.classList.toggle("is-open");
