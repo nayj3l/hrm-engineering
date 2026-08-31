@@ -49,9 +49,36 @@
       groups.forEach(group => {
         const match = filter === "all" || group.dataset.category === filter;
         group.hidden = !match;
+        if (!match) group.classList.remove("is-inview");
       });
     });
   });
+
+  const revealItems = document.querySelectorAll(".js-reveal");
+
+  if (revealItems.length) {
+    if (reduceMotion) {
+      revealItems.forEach(item => item.classList.add("is-inview"));
+    } else {
+      const revealObserver = new IntersectionObserver(
+        entries => {
+          entries.forEach(entry => {
+            if (entry.target.hidden) {
+              entry.target.classList.remove("is-inview");
+              return;
+            }
+            entry.target.classList.toggle("is-inview", entry.isIntersecting);
+          });
+        },
+        {
+          threshold: 0.16,
+          rootMargin: "0px 0px -10% 0px"
+        }
+      );
+
+      revealItems.forEach(item => revealObserver.observe(item));
+    }
+  }
 
   const form = document.querySelector("#contact-form");
   const success = document.querySelector("#form-success");
