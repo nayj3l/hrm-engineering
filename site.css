@@ -226,11 +226,11 @@ main {
   color: var(--navy);
 }
 
-.page-hero--team {
+.page-hero--loose {
   padding-bottom: clamp(3.25rem, 6vw, 5rem);
 }
 
-.team-roster {
+.section--after-hero {
   padding-top: clamp(2.75rem, 6vw, 4.75rem);
 }
 
