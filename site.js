@@ -123,7 +123,7 @@
         if (error) {
           error.classList.add("is-visible");
           error.textContent =
-            "Unable to send right now. Please email info@hrmengineering.com.";
+            "Unable to send right now. Please call 516-248-0750.";
         }
       };
 
