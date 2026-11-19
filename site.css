@@ -5,6 +5,7 @@
   --accent: #2e338a;
   --blue: #437cc0;
   --mist: #c2e3f4;
+  --nav-selected: rgba(46, 51, 138, 0.06);
   --ink: #0d1520;
   --muted: #5c6b7e;
   --line: rgba(13, 21, 32, 0.1);
@@ -139,7 +140,7 @@ textarea {
 .nav a:hover,
 .nav a.is-active {
   color: var(--accent);
-  background: rgba(46, 51, 138, 0.06);
+  background: var(--nav-selected);
 }
 
 .nav-cta {
@@ -333,6 +334,10 @@ main {
   animation: heroCopyIn 1.2s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
+.home-hero .eyebrow {
+  color: rgba(255, 255, 255, 0.75);
+}
+
 .home-hero-inner > :nth-child(1) { animation-delay: 0.28s; }
 .home-hero-inner > :nth-child(2) { animation-delay: 0.46s; }
 .home-hero-inner > :nth-child(3) { animation-delay: 0.64s; }
@@ -452,6 +457,10 @@ main {
   color: var(--muted);
 }
 
+.shell--wide {
+  width: min(1440px, calc(100% - (var(--gutter) * 2)));
+}
+
 .home-featured-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -461,7 +470,7 @@ main {
 .home-feature {
   position: relative;
   display: block;
-  min-height: 22rem;
+  min-height: 34rem;
   overflow: hidden;
   border-radius: 0;
   color: #fff;
@@ -477,11 +486,13 @@ main {
   height: 100%;
   object-fit: cover;
   transform: scale(1.04);
-  transition: transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+  filter: blur(0);
+  transition: transform 0.9s cubic-bezier(0.22, 1, 0.36, 1), filter 0.8s ease;
 }
 
 .home-feature:hover img {
-  transform: scale(1.12);
+  transform: scale(1.08);
+  filter: blur(2px) brightness(1.05);
 }
 
 .home-feature::before {
@@ -489,14 +500,8 @@ main {
   position: absolute;
   inset: 0;
   z-index: 1;
-  background: linear-gradient(180deg, rgba(12, 24, 42, 0) 42%, rgba(12, 24, 42, 0.28) 100%);
-  opacity: 0;
-  transition: opacity 0.5s ease;
+  background: rgba(8, 16, 27, 0.28);
   pointer-events: none;
-}
-
-.home-feature:hover::before {
-  opacity: 1;
 }
 
 .home-feature::after {
@@ -527,13 +532,8 @@ main {
   display: flex;
   flex-direction: column;
   gap: 0.3rem;
-  padding: 0.85rem 1.15rem 1rem;
-  background: rgba(8, 16, 27, 0.78);
-  transition: background 0.4s ease;
-}
-
-.home-feature:hover span {
-  background: rgba(8, 16, 27, 0.92);
+  padding: 2.75rem 1.25rem 1.15rem;
+  background: linear-gradient(180deg, rgba(8, 16, 27, 0) 0%, rgba(8, 16, 27, 0.45) 100%);
 }
 
 .home-feature small {
@@ -549,17 +549,12 @@ main {
   letter-spacing: -0.03em;
 }
 
-.home-intro {
-  max-width: 48rem;
+.home-about {
+  background: var(--nav-selected);
 }
 
-.home-intro p {
-  color: var(--muted);
-  font-size: 1.05rem;
-}
-
-.home-intro p + p {
-  margin-top: 1rem;
+.home-about .home-link {
+  background: #fff;
 }
 
 .home-links {
@@ -622,6 +617,19 @@ main {
   transform: translateX(0.4rem);
 }
 
+.home-map-frame {
+  height: 28rem;
+  background: var(--wash);
+  border-radius: 0;
+}
+
+.home-map-frame iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .home-feature img,
   .home-feature::before,
@@ -638,6 +646,10 @@ main {
   .home-link:hover strong,
   .home-link:hover span {
     transform: none;
+  }
+
+  .home-feature:hover img {
+    filter: none;
   }
 }
 
@@ -1247,6 +1259,10 @@ a.work-card:focus-visible {
   .home-strip,
   .home-featured-grid {
     grid-template-columns: 1fr;
+  }
+
+  .home-feature {
+    min-height: 24rem;
   }
 
   .nav-toggle {
