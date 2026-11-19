@@ -123,11 +123,16 @@ textarea {
 }
 
 .nav a {
-  padding: 0.65rem 0.9rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.75rem;
+  padding: 0.7rem 1.15rem;
   font-size: 0.9rem;
   font-weight: 600;
+  line-height: 1;
   color: var(--muted);
-  border-radius: 999px;
+  border-radius: 0;
   transition: color 0.2s ease, background 0.2s ease;
 }
 
@@ -139,7 +144,6 @@ textarea {
 
 .nav-cta {
   margin-left: 0.5rem;
-  padding: 0.7rem 1.15rem !important;
   background: var(--accent) !important;
   color: #fff !important;
 }
@@ -153,7 +157,7 @@ textarea {
   width: 2.75rem;
   height: 2.75rem;
   border: 0;
-  border-radius: 999px;
+  border-radius: 0;
   background: var(--wash);
   cursor: pointer;
 }
@@ -174,7 +178,7 @@ textarea {
   justify-content: center;
   min-height: 3.1rem;
   padding: 0.85rem 1.4rem;
-  border-radius: 999px;
+  border-radius: 0;
   border: 1px solid transparent;
   font-size: 0.92rem;
   font-weight: 700;
@@ -459,9 +463,11 @@ main {
   display: block;
   min-height: 22rem;
   overflow: hidden;
+  border-radius: 0;
   color: #fff;
   background: var(--navy);
   text-decoration: none;
+  isolation: isolate;
 }
 
 .home-feature img {
@@ -470,6 +476,46 @@ main {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transform: scale(1.04);
+  transition: transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.home-feature:hover img {
+  transform: scale(1.12);
+}
+
+.home-feature::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(180deg, rgba(12, 24, 42, 0) 42%, rgba(12, 24, 42, 0.28) 100%);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  pointer-events: none;
+}
+
+.home-feature:hover::before {
+  opacity: 1;
+}
+
+.home-feature::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: 3;
+  width: 100%;
+  height: 3px;
+  background: var(--blue);
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+  pointer-events: none;
+}
+
+.home-feature:hover::after {
+  transform: scaleX(1);
 }
 
 .home-feature span {
@@ -477,12 +523,17 @@ main {
   left: 0;
   right: 0;
   bottom: 0;
-  z-index: 1;
+  z-index: 2;
   display: flex;
   flex-direction: column;
   gap: 0.3rem;
   padding: 0.85rem 1.15rem 1rem;
   background: rgba(8, 16, 27, 0.78);
+  transition: background 0.4s ease;
+}
+
+.home-feature:hover span {
+  background: rgba(8, 16, 27, 0.92);
 }
 
 .home-feature small {
@@ -519,29 +570,75 @@ main {
 }
 
 .home-link {
+  position: relative;
   display: flex;
   flex-direction: column;
   gap: 0.4rem;
   padding: 1.35rem 1.4rem;
+  overflow: hidden;
   border: 1px solid var(--line);
-  border-radius: 1.1rem;
+  border-radius: 0;
   background: var(--wash);
-  transition: border-color 0.2s ease, transform 0.2s ease;
+  transition: background 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+}
+
+.home-link::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 3px;
+  background: var(--navy);
+  transform: scaleY(0);
+  transform-origin: top center;
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .home-link:hover {
-  border-color: rgba(46, 51, 138, 0.28);
-  transform: translateY(-2px);
+  border-color: var(--navy);
+  background: #fff;
+  box-shadow: 0 16px 32px rgba(28, 45, 89, 0.08);
+}
+
+.home-link:hover::before {
+  transform: scaleY(1);
 }
 
 .home-link strong {
   color: var(--navy);
   font-size: 1.05rem;
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .home-link span {
   color: var(--muted);
   font-size: 0.92rem;
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.home-link:hover strong,
+.home-link:hover span {
+  transform: translateX(0.4rem);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-feature img,
+  .home-feature::before,
+  .home-feature::after,
+  .home-feature span,
+  .home-link,
+  .home-link::before,
+  .home-link strong,
+  .home-link span {
+    transition: none;
+  }
+
+  .home-feature:hover img,
+  .home-link:hover strong,
+  .home-link:hover span {
+    transform: none;
+  }
 }
 
 /* ── About ──────────────────────────────────────────────── */
@@ -611,7 +708,7 @@ main {
 
 .cert-row span {
   padding: 0.55rem 0.9rem;
-  border-radius: 999px;
+  border-radius: 0;
   background: rgba(46, 51, 138, 0.08);
   color: var(--accent);
   font-size: 0.85rem;
@@ -748,7 +845,7 @@ main {
 .filter-btn {
   padding: 0.55rem 0.95rem;
   border: 1px solid var(--line);
-  border-radius: 999px;
+  border-radius: 0;
   background: transparent;
   color: var(--muted);
   font-size: 0.85rem;
@@ -791,7 +888,7 @@ main {
   position: relative;
   overflow: hidden;
   min-height: 26rem;
-  border-radius: 1.25rem;
+  border-radius: 0;
   color: #fff;
   background: var(--navy);
 }
@@ -881,7 +978,7 @@ a.work-card:focus-visible {
 
 .project-hero-photo {
   margin-top: clamp(1.5rem, 3vw, 2.25rem);
-  border-radius: 1.25rem;
+  border-radius: 0;
   overflow: hidden;
   background: var(--navy);
 }
@@ -916,7 +1013,7 @@ a.work-card:focus-visible {
 
 .project-facts {
   padding: 1.4rem 1.35rem 1.5rem;
-  border-radius: 1.25rem;
+  border-radius: 0;
   background: var(--wash);
 }
 
@@ -959,7 +1056,7 @@ a.work-card:focus-visible {
   width: 100%;
   height: 16rem;
   object-fit: cover;
-  border-radius: 1rem;
+  border-radius: 0;
   background: var(--navy);
 }
 
@@ -1025,7 +1122,7 @@ a.work-card:focus-visible {
   gap: 1rem;
   padding: clamp(1.5rem, 3vw, 2rem);
   border: 1px solid var(--line);
-  border-radius: 1.35rem;
+  border-radius: 0;
   background: var(--wash);
 }
 
@@ -1046,7 +1143,7 @@ a.work-card:focus-visible {
   width: 100%;
   padding: 0.85rem 1rem;
   border: 1px solid var(--line);
-  border-radius: 0.85rem;
+  border-radius: 0;
   background: #fff;
   color: var(--ink);
 }
@@ -1071,7 +1168,7 @@ a.work-card:focus-visible {
 .form-success {
   display: none;
   padding: 1rem 1.1rem;
-  border-radius: 0.9rem;
+  border-radius: 0;
   background: rgba(46, 51, 138, 0.08);
   color: var(--accent);
   font-weight: 600;
@@ -1092,7 +1189,7 @@ a.work-card:focus-visible {
 .form-error {
   display: none;
   padding: 1rem 1.1rem;
-  border-radius: 0.9rem;
+  border-radius: 0;
   background: rgba(180, 40, 40, 0.08);
   color: #8a1f1f;
   font-weight: 600;
@@ -1166,7 +1263,7 @@ a.work-card:focus-visible {
     align-items: stretch;
     padding: 0.75rem;
     border: 1px solid var(--line);
-    border-radius: 1rem;
+    border-radius: 0;
     background: #fff;
     box-shadow: 0 18px 40px rgba(13, 21, 32, 0.08);
   }
